@@ -1,0 +1,165 @@
+._survey {
+	padding: $page-py 0;
+}
+
+._survey-info{
+	text-align: center;
+	color: #fff;
+	h1 {
+		@extend ._font__title;
+	}
+	p {
+		margin-top: 0.5rem;
+	}
+	@media screen and (min-width: 992px) {
+		text-align: left;
+	}
+}
+._survey-list{
+	padding: 50px 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	li {
+		background: #FFF;
+		box-shadow: 0 20px 40px 0 rgba(0,0,0,0.03);
+		border-radius: 8px;
+		flex: 0 0 100%;
+		margin-bottom: 3%;
+		padding: 0 5%;
+		overflow: hidden;
+	}
+	&__info{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		padding: 50px 0;
+		padding-right: 100px;
+		z-index: 1;
+		h2{
+			@extend ._font--xl;
+			@extend ._font--bold;
+			flex: 0 0 100%;
+			max-width: 250px;
+			white-space: nowrap;
+			margin: 0.5rem 0;
+		}
+	}
+	&__btns{
+		margin: 0.5rem 0;
+		white-space: nowrap;
+		a{
+			@extend ._font--xs;
+			color:$grey7;
+			display: inline-block;
+			margin-right: 20px;
+			&._survey-list__start{
+				border:1px solid $grey7;
+				padding: 5px 10px;
+			}
+			&:hover{
+				color:black;
+				border-color:$grey9;
+			}
+		}
+	}
+	&__img {
+		position: absolute;
+		right: -15%;
+		bottom:0;
+		line-height: 1;
+		font-size: 0;
+		z-index: 0;
+		height: 120%;
+		opacity: 0.3;
+		img{
+			height: 100%;
+		}
+	}
+	@media screen and (min-width: 480px) {
+		&__img {
+			opacity: 1;
+		}
+	}
+	@media screen and (min-width: 576px) {
+		&__img {
+			width:40%;
+			max-width: 200px;
+			height: auto;
+			right: 0;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+	@media screen and (min-width: 992px) {
+		li{
+			flex: 0 0 48.5%;
+			h2{
+				max-width: initial;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+._survey-list__descDetail{
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index: 2000;
+	background-color: rgba(white,0.95);
+	width:100vw;
+	height: 100vh;
+	overflow: auto;
+	text-align: center;
+	padding:$page-py 0;
+	img{
+		width: 100%;
+		max-width: 300px;
+	}
+	h3{
+		@extend ._font__title;
+		margin-top: 80px;
+	}
+	p{
+		max-width: 800px;
+		margin: auto;
+		margin-top: 30px;
+		text-align: left;
+	}
+	@media screen and (min-width: 768px) {
+		padding:100px;
+	}
+}
+._survey-list__descDetailClose{
+	position: fixed;
+	right: 8%;
+	top: 15px;
+	background: $themePurple;
+	box-shadow: 0 10px 20px 0 rgba(0,0,0,0.14);
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	transition: .3s;
+	&:hover {
+		background: darken($themePurple,10%);
+	}
+	@media screen and (min-width: 768px) {
+		top: 50px;
+		width: 60px;
+		height: 60px;
+	}
+}

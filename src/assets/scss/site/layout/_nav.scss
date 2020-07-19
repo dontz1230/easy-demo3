@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  background: $planGreen;
+  height: 80px;
+  justify-content: space-between;
+  padding: 0 5%;
+  align-items: center;
+  &__links {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+  }
+  img {
+      width: 150px;
+  }
+}
+a {
+  color: #fff;
+}

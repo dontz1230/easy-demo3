@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/** 
+ * Pyrocms css overwrite
+ * 
+ * @author 		CLHOM - KICKcreative Dev Team
+ * @website		http://www.kiiiick.com
+ */
+
+/** 
+ * system message style overwrite
+ */
+body > .success-box, 
+body > .notice-box, 
+body > .error-box {
+	display: none;
+}

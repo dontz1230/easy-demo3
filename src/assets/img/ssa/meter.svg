@@ -1,0 +1,28 @@
+
+<svg width="279px" height="157px" viewBox="0 0 279 157" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="SSA" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SSA-Survey-page" transform="translate(-186.000000, -506.000000)">
+            <g id="Group-7" transform="translate(142.000000, 249.000000)">
+                <g id="Group-5" transform="translate(34.000000, 252.000000)">
+                    <text id="高" font-family="NotoSansCJKsc-Black, Noto Sans CJK SC" font-size="18" font-weight="700" fill="#000000">
+                        <tspan x="10" y="96">高</tspan>
+                    </text>
+                    <text id="中" font-family="NotoSansCJKsc-Black, Noto Sans CJK SC" font-size="18" font-weight="700" fill="#000000">
+                        <tspan x="141" y="21">中</tspan>
+                    </text>
+                    <text id="低" font-family="NotoSansCJKsc-Black, Noto Sans CJK SC" font-size="18" font-weight="700" fill="#000000">
+                        <tspan x="271" y="96">低</tspan>
+                    </text>
+                    <path d="M268,155 C268,90.934969 215.393458,39 150.5,39 C85.6065419,39 33,90.934969 33,155" id="Oval-7" stroke="#CCCCCC" stroke-width="14" stroke-linecap="round"></path>
+                    
+                    <path d="M111,103 L57.5,27.5" id="Line-2" stroke="#F4F4F4" stroke-width="4" stroke-linecap="square"></path>
+                    <path d="M242,97 L195.5,27.5" id="Line-2-Copy" stroke="#F4F4F4" stroke-width="4" stroke-linecap="square" transform="translate(218.500000, 62.000000) scale(-1, 1) translate(-218.500000, -62.000000) "></path>
+                    <path d="M208,156 C208,123.967485 182.256373,98 150.5,98 C118.743627,98 93,123.967485 93,156" id="Oval-8-Copy-2" fill="#E1E1E1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

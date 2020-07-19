@@ -1,0 +1,30 @@
+._second-nav {
+	background-color: $themePurple;
+	padding-top: 50px;
+	padding-bottom: 80px;
+	margin-bottom: -$page-py;
+	margin-top: 50px;
+	@media screen and (min-width: 768px) {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	ul {
+		li {
+			margin-bottom: 16px;
+			a {
+				@include is-link(white);
+				@extend ._font--bold;
+				@extend ._font--s;
+				color: #fff!important;
+				transition: .3s;
+			}
+		}
+		@media screen and (min-width: 768px) {
+			li{
+				display: inline-block;
+				margin: auto 16px;
+			}
+			text-align: center;	
+		}
+	}
+}

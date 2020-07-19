@@ -1,0 +1,162 @@
+$themePurple: #7484ff;
+$themePink: #ff8484;
+$themeGreen: #66cdb6;
+$themePurple--dark: #5d6acd;
+$themePink--dark: rgb(146, 53, 53);
+$themeGreen--dark: rgb(41, 116, 99);
+$themePurple--light: #afb8ff;
+$themePink--light: #ffb6b6;
+$themeGreen--light: rgb(139, 224, 204);
+$themeWarning: #f45353;
+
+$themeColors: ();
+$themeColors: map-merge(
+  (
+    "pink": $themePink,
+    "green": $themeGreen
+  ),
+  $themeColors
+);
+$themeColorsLight: ();
+$themeColorsLight: map-merge(
+  (
+    "pinkLight": $themePink--light,
+    "greenLight": $themeGreen--light
+  ),
+  $themeColorsLight
+);
+
+@mixin make-theme-colors() {
+  @each $themeColorLight in map-keys($themeColorsLight) {
+    $hexLight: map-get($themeColorsLight, $themeColorLight);
+    ._theme__bg--#{$themeColorLight} {
+      background-color: $hexLight !important;
+    }
+    ._theme__bg--#{$themeColorLight} {
+      background-color: $hexLight !important;
+    }
+  }
+  @each $themeColor in map-keys($themeColors) {
+    $hex: map-get($themeColors, $themeColor);
+    ._subject-main__article--#{$themeColor} {
+      a {
+        color: $hex;
+        text-decoration: underline;
+        &:hover {
+          color: darken($hex, 10);
+        }
+      }
+      ._article__h2,
+      ._article__text--colored {
+        color: $hex;
+      }
+      ._article__list--bigDot li {
+        &::before {
+          background-color: $hex;
+        }
+      }
+      ._article__listBlock--bgColored {
+        > li {
+          background-color: $hex;
+        }
+      }
+      ._article__block--bgColored {
+        background-color: $hex;
+      }
+      ._article__chartTree {
+        &--parent {
+          background-color: $hex;
+        }
+        &--child {
+          background-color: hsl(hue($hex), 60, 60);
+          &::before {
+            border-color: transparent
+              transparent
+              hsl(hue($hex), 60, 60)
+              transparent;
+          }
+        }
+        &--child:last-child {
+          background-color: hsl(hue($hex), 30, 50);
+          &::before {
+            border-color: transparent
+              transparent
+              hsl(hue($hex), 30, 50)
+              transparent;
+          }
+        }
+      }
+      // ._article__sliderBlock{
+      //     ._article__img{
+      //         border-color: $hex;
+      //     }
+      // }
+    }
+
+    ._theme__text--#{$themeColor} {
+      color: $hex !important;
+      //menu hamburger
+      ::before {
+        color: $hex;
+      }
+    }
+    ._theme__textHover--#{$themeColor} {
+      &:hover {
+        color: darken($hex, 5%) !important;
+      }
+      &.active {
+        color: darken($hex, 5%) !important;
+      }
+    }
+    ._theme__border--#{$themeColor} {
+      border-color: $hex !important;
+    }
+    ._theme__borderHover--#{$themeColor} {
+      &:hover {
+        border-color: darken($hex, 5%) !important;
+      }
+      &.active {
+        border-color: darken($hex, 5%) !important;
+      }
+    }
+    ._theme__linkLineHover--#{$themeColor} {
+      color:#fff!important;
+      &:hover {
+        &::after {
+          background-color: $hex !important;
+        }
+      }
+    }
+    ._theme__bg--#{$themeColor} {
+      background-color: $hex !important;
+    }
+    ._theme__bgOpacity--#{$themeColor} {
+      background-color: rgba($hex, 0.95) !important;
+    }
+    ._theme__bgHover--#{$themeColor} {
+      &:hover {
+        background-color: darken($hex, 5%) !important;
+      }
+    }
+    ._theme__form--#{$themeColor} {
+      [type="checkbox"]:not(:checked) + label:before,
+      [type="checkbox"]:checked + label:before,
+      [type="radio"]:checked + label:before,
+      [type="radio"]:not(:checked) + label:before {
+        border-color: $hex !important;
+      }
+      [type="radio"]:checked + label:after,
+      [type="radio"]:not(:checked) + label:after {
+        background-color: $hex !important;
+      }
+      [type="checkbox"]:not(:checked) + label:after,
+      [type="checkbox"]:checked + label:after {
+        background-image: url(~@/assets/img/form/check-#{$themeColor}.svg);
+      }
+      ._form-require::after {
+        color: $hex !important;
+      }
+    }
+  }
+}
+@include make-theme-colors();

@@ -1,0 +1,95 @@
+._share__section{
+    background-color: $themePurple;
+    flex:0 0 100vw;
+    max-width: 100vw;
+    width: 100vw;
+    margin-left:calc((100% - 100vw) / 2);
+    .container{
+        display: flex;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+    ._share__btn {
+        color: #fff;
+        border: 2px solid #fff;
+        background-color: transparent;
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        cursor: pointer;
+        transition: .3s;
+        opacity: 0.8;
+        margin-right: 10px;
+        &:hover {
+            opacity: 1;
+        }
+        
+    }
+
+
+    
+    
+    
+    @media screen and (min-width: 992px) {
+        width:100%;
+        max-width: 100%;
+        margin-left:0;
+        .container{
+            padding: 50px $px;
+        }
+        &--side{
+            flex:0 0 8.33333%;
+            max-width: 8.33333%;
+            width: auto;
+            background-color: transparent!important;
+            .container{
+                display: flex;
+                // justify-content: flex-end;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                padding:0;
+                align-items: flex-end;
+                *{
+                    flex:0 0 50px;
+                }
+            }
+            ._share__btn{
+                color: $themePurple;
+                border-color: $themePurple;
+                margin-right: 0;
+                &:hover {
+                    color: #fff;
+                    border-color: $themePurple;
+                    background-color: $themePurple;
+                }
+                &:first-child{
+                    margin-bottom: 17px;
+                }
+            }
+            
+            &.pink {
+                ._share__btn{
+                    color: $themePink;
+                    border-color: $themePink;
+                    &:hover {
+                        color: #fff;
+                        border-color: $themePink;
+                        background-color: $themePink;
+                    }
+                }
+            }
+            &.green {
+                ._share__btn{
+                    color: $themeGreen;
+                    border-color: $themeGreen;
+                    &:hover {
+                        color: #fff;
+                        border-color: $themeGreen;
+                        background-color: $themeGreen;
+                    }    
+                }
+            }
+        }	
+    }
+    
+}

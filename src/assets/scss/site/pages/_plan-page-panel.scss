@@ -1,0 +1,32 @@
+.plan-panel {
+  grid-area: panel;
+  background: #fff;
+  height: 135px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 46px;
+  align-items: center;
+  &__left {
+    color: #787878;
+    div {
+      display: inline-block;
+    }
+    &--btn {
+      background: $planGreen;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 8px;
+      color: #fff;
+      margin-left: 46px;
+    }
+  }
+  &__right {
+    color: #787878;
+    div {
+      display: inline-block;
+      &:first-of-type {
+        margin-right: 46px;
+      }
+    }
+  }
+}

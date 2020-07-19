@@ -1,0 +1,134 @@
+// ._footer .container-fluid{
+// 	padding-left: $px;
+// 	padding-right: $px;
+// }
+._footer-copyright {
+	border-top: 1px solid #ccc;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	overflow: auto;
+	a{
+		// display: inline-block;
+		// float: right;
+		// margin-right: 10%;
+		._icon-facebook{
+			@extend ._font--xs;
+			display: inline-block;
+			border-radius: 50%;
+			background-color: #3258DD;
+			width: 24px;
+			height: 24px;
+			line-height: 24px;
+			color: #fff;
+			text-align: center;
+			transition: .3s;
+		}
+		em{
+			@extend ._font--xs;
+			color:#333;
+		}
+		&:hover{
+			._icon-facebook{
+				background-color: darken(#3258DD,5%);
+			}
+			em{
+				color:black;
+				text-decoration: underline;
+			}
+		}
+	}
+	small {
+		@extend ._font--xxs;
+		color: #ccc;
+	}
+	@media screen and (min-width: 576px) {
+		a{
+			float: left;
+		}
+		small{
+			float: right;
+			margin-top: 5px!important;
+		}
+	}
+	@media screen and (min-width: 768px) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		a{
+			._icon-facebook{
+				width: 48px;
+				height: 48px;
+				line-height: 48px;
+			}
+		}
+		small{
+			margin-top: 12px!important;
+		}
+	}
+}
+._footer-counter{
+	display: none;
+	@media screen and (min-width: 992px) {
+		// @include _font-p2r(12);
+		color: $grey7;
+		display: inline-block;
+		margin-left: 20px;
+		line-height: 48px;
+	}
+}
+
+/*Mobile
+=============================================================================*/
+
+._footer-m-main-footer {
+	border-top:1px solid #eee;
+	display: flex;
+	a {
+		flex: 0 0 50%;
+		text-align: center;
+		height: 100px;
+		line-height: 100px;
+		font-size: 22px;
+		color: $themePurple;
+		&:first-child {
+			border-right: 1px solid #ddd;
+		}
+	}
+}
+
+/*PC
+=============================================================================*/
+._footer-main-footer {
+	overflow: auto;
+	padding-top:100px;
+	padding-bottom:100px; 
+	border-top:1px solid #eee;
+	ul {
+		display: inline-block;
+		float: left;
+		li {
+			margin-bottom: 27px;
+			a {
+				@extend ._font--xs;
+				@extend ._font--bold;
+				@include is-link();
+				color:black;
+			}
+		}
+	}
+	._footer-main-footer__contact {
+		display: inline-block;
+		float: right;
+		margin-top: 30px;
+		a {
+			@include _font-p2r(64);
+			@extend ._font--black;
+			@extend ._font--en;
+			color: $themePurple;
+			transition: .3s;
+			&:hover{
+				color:darken($themePurple,10%);
+			}
+		}
+	}
+}

@@ -1,0 +1,56 @@
+.checkBlock{
+  display: grid;
+  grid-template-columns: repeat(4,190px);
+  grid-template-rows: 40px;
+  &:first-child {
+    grid-template-columns: 190px 190px auto;
+  }
+  .checkContainer {
+    display: flex;
+      align-items: center;
+    input[type="checkbox"] {
+      position: relative!important;
+      left: auto;
+      -webkit-appearance: checkbox;
+    }
+    label {
+      padding: 0;
+      font-size: 1rem;
+      font-weight: normal!important;
+      &:before {
+        display:none;
+      }
+    }
+  }
+}
+
+
+.twoColumn {
+  display:grid;
+  grid-template-columns: 289px auto;
+  grid-gap: 8px;
+  grid-template-rows: 53px;
+    margin-bottom: 8px;
+}
+
+textarea {
+  height: 53px;
+  border-radius: 4px;
+}
+input[type="text"]{
+  height: 53px;
+  border-radius: 4px;
+}
+
+.addBtn {
+  height: 37px;
+  padding: 4px 34px;
+  color:#fff;
+  background: #FF8A8A;
+  width: max-content;
+    border-radius: 8px;
+    margin-bottom:21px;
+  i {
+    color:#fff;
+  }
+}

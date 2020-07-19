@@ -1,0 +1,24 @@
+.plan-catelogue {
+  grid-area: catelogue;
+  padding: 0 46px;
+  margin-top: 76px;
+}
+
+.stepList {
+  display: flex;
+  margin-bottom: 35px;
+  color: #747474;
+  &__dot {
+    margin-right: 14px;
+    width: 30px;
+    height: 30px;
+    background: #66cdb6;
+    border-radius: 100%;
+    border: 3px solid #eaeaea;
+  }
+  &__index {
+  }
+
+  &__title {
+  }
+}

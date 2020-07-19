@@ -1,0 +1,118 @@
+.plan-list {
+  padding-bottom: 174px;
+  background: #f8f8f8;
+  &__title {
+    padding: 36px 22px;
+    h1 {
+      color: $planGreen;
+      font-size: 2em;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    max-width: 1440px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+.plan-block {
+  margin-right: 50px;
+  margin-bottom: 50px;
+  min-width: 275px;
+  height: 473px;
+  display: flex;
+  justify-content: center;
+  &:first-of-type {
+    background: $planGreen;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    i {
+      font-size: 5rem;
+    }
+    span {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.new-plan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding-top: 6px;
+  &__header {
+    display: flex;
+    width: 100%;
+    color: $planGreen;
+    padding-left: 10px;
+    &__close {
+      position: absolute;
+      right: 7px;
+      background: $planGreen;
+      color: #fff;
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      border-radius: 8px;
+    }
+  }
+  &__content {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .plan-options {
+      justify-content: space-evenly;
+      width: 100%;
+      margin-bottom: 10px;
+      align-items: center;
+      display: flex;
+      .plan-options__btn {
+        border: 1px solid #d4d4d4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #333;
+        border-radius: 8px;
+        padding: 6px 12px;
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+    .plan-img {
+      img {
+        width: 180px;
+        height: 255px;
+      }
+    }
+    span {
+      color: #656c6a;
+      font-size: 0.875em;
+    }
+  }
+  &__footer {
+    width: 100%;
+    background: $planGreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: #fff;
+    }
+  }
+}

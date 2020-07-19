@@ -1,0 +1,38 @@
+._tag_list{
+    margin-left: -5px!important;
+    &--swiper{
+        margin-left: 0!important;;
+    }
+    li,.swiper-slide{
+        @extend ._font--xs;
+        display: inline-block;
+        color: $grey7;
+        border: 1px solid $greyC;
+        border-radius: 5px;
+        padding:10px;
+        margin-left: 5px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        cursor: pointer;
+        transition: .3s;
+        width: auto;
+        a{
+            color: $grey7;
+        }
+        &:hover {
+            color: #666;
+            border-color: #999;
+        }
+    }
+    .swiper-slide{
+        margin-left: 0;
+    }
+    &--small{
+        margin-left: -5px!important;
+        li{
+            @extend ._font--xxs;
+            padding:5px;
+            margin-left: 5px;
+        }
+    }
+}

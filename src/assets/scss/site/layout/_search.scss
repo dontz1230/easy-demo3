@@ -1,0 +1,101 @@
+._search {
+	display: inline-block;
+	button {
+		display: inline-block;
+		cursor: pointer;
+		&:hover {
+			color: $themePurple;
+		}
+	}
+	
+	&--open {
+		input {
+			transform: scaleX(1);
+		}
+	}
+}
+
+._search-dialog {
+	max-width:100vw!important;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, .95);
+	&__content {
+		flex:0 0 100%;
+		max-width: 650px;
+		margin-top: -10vh;
+	}
+	h2 {
+		@extend ._font__title;
+		color:$themePurple;
+		text-align: center;
+	}
+	&__field{
+		height: 75px;
+	}
+	input[type=search] {
+		background: #FFFFFF;
+		border: 1px solid $grey7;
+		width:100%;
+		padding: 0 95px 0 20px;
+		line-height: 75px;
+		display: block;
+	}
+	&__do {
+		display: block;
+		border: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+		cursor: pointer;
+		color:white;
+		background-color: $themePurple;
+		width:77px;
+		height: 77px;
+		line-height: 77px;
+		text-align: center;
+		&:hover {
+			background-color: darken($themePurple,5%);
+		}
+	}
+	&__close {
+		position: absolute;
+		right: $px;
+		top: 30px;
+		background: $themePurple;
+		box-shadow: 0 10px 20px 0 rgba(0,0,0,0.14);
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		border: none;
+		color: #fff;
+		cursor: pointer;
+		transition: .3s;
+		&:hover {
+			background: darken($themePurple,5%);
+		}
+	}
+	&-enter-active {
+		transition: all .3s ease;
+		
+	}
+	&-leave-active {
+		transition: all .3s ease;
+		
+	}
+	&-enter {
+		opacity: 0;
+		top: -100%;
+	}
+	&-leave-to {
+		opacity: 0;
+		top: -100%;
+	}
+}

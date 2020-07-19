@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="279px" height="169px" viewBox="0 0 279 169" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 7</title>
+    <desc>Created with Sketch.</desc>
+    <g id="SSA" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SSA-PDF-1" transform="translate(-573.000000, -448.000000)">
+            <g id="Group-2" transform="translate(142.000000, 443.000000)">
+                <g id="Group-5" transform="translate(41.000000, 0.000000)">
+                    <g id="Group-7" transform="translate(390.000000, 0.000000)">
+                        <text id="高-copy" font-family="NotoSansCJKsc-Black, Noto Sans CJK SC" font-size="18" font-weight="700" fill="#000000">
+                            <tspan x="0" y="96">高</tspan>
+                        </text>
+                        <text id="中-copy" font-family="NotoSansCJKsc-Black, Noto Sans CJK SC" font-size="18" font-weight="700" fill="#000000">
+                            <tspan x="131" y="21">中</tspan>
+                        </text>
+                        <text id="低-copy" font-family="NotoSansCJKsc-Black, Noto Sans CJK SC" font-size="18" font-weight="700" fill="#000000">
+                            <tspan x="261" y="96">低</tspan>
+                        </text>
+                        <path d="M258,155 C258,90.934969 205.393458,39 140.5,39 C75.6065419,39 23,90.934969 23,155" id="Oval-7-Copy" stroke="#CCCCCC" stroke-width="14" stroke-linecap="round"></path>
+                        <path d="M209.161152,61.5030538 C189.966809,47.4809902 166.217154,39.1896517 140.505912,39.1896517 C115.104369,39.1896517 91.617442,47.2824502 72.5462542,60.9988537" id="Oval-7-Copy" stroke="#66CDB6" stroke-width="14" stroke-linecap="round"></path>
+                        <path d="M135.5,155.5 L41.5,27.5" id="Line-2" stroke="#FFFFFF" stroke-width="4" stroke-linecap="square"></path>
+                        <path d="M240.5,155.5 L146.5,27.5" id="Line-2-Copy" stroke="#FFFFFF" stroke-width="4" stroke-linecap="square" transform="translate(193.500000, 91.500000) scale(-1, 1) translate(-193.500000, -91.500000) "></path>
+                        <path d="M197,156 C197,123.967485 171.256373,98 139.5,98 C107.743627,98 82,123.967485 82,156" id="Oval-8" fill="#D8D8D8" opacity="0.401618304"></path>
+                        <path d="M140,144.308931 L140,85.8889745" id="Line-6-Copy" stroke="#66CDB6" stroke-width="20" stroke-linecap="round"></path>
+                        <circle id="Oval-9-Copy" fill="#66CDB6" cx="140" cy="157" r="17"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

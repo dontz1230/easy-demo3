@@ -1,0 +1,37 @@
+._contact {
+	background: url(~@/assets/img/account/bg.png) center center no-repeat;
+	background-size: cover;
+	h1 {
+		@extend ._font__title--large;
+		@extend ._font--black;
+		@extend ._font--en;
+		color: $themePurple;
+	}
+	li {
+		@extend ._font--s;
+		@extend ._font--bold;
+		.title{
+			display: inline-block;
+			vertical-align: top;
+			width:60px;
+		}
+		.email{
+			display: inline-block;
+			vertical-align: top;
+			width:calc(100% - 65px);
+			a{
+				display: block;
+			}
+		}
+	}
+	a {
+		@extend ._font--s;
+		@extend ._font--bold;
+		color: #000000;
+		transition: .3s;
+		cursor: pointer;
+		&:hover {
+			color: $themePurple;
+		}
+	}
+}

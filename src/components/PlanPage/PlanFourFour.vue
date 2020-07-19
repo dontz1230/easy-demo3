@@ -1,0 +1,293 @@
+<template>
+  <div class="plan-section plan-section-three-four">
+    <TheModal @closeModal="closeModal" v-if="modal">
+      <template #header>應變工作分配</template>
+      <div class="twoColumn" style="width: 100%;">
+        <select>
+          <option value selected>通報班</option>
+          <option value>搶救班</option>
+          <option value>救護班</option>
+          <option value>避難引導班</option>
+          <option value>安全防護班</option>
+        </select>
+        <select name id>
+          <option value selected>協助住民穩住重心</option>
+        </select>
+      </div>
+
+      <div class="planJob">
+        <div class="planTitle__text inline">指定負責人員</div>
+        <div
+          class="planTitle__redIcon"
+          style="
+    display: inline-block;
+    text-align: center;
+    line-height: 34px;
+    font-size: 16px;"
+          data-red="指定負責人員時，需思考平時機構人力狀況，並一併制定人員的召回機制，包含機構的地震、颱洪應變啟動時機、集合地點、訊息通知方式（簡訊、電話或社群網路等方法）及工作分配，確保災時有可運用之人力。
+如果夜間、日間、平日、假日班別數不同，請在完成本系統其他項目後，請利用匯出之word檔自行增補。"
+        >
+          <i class="fas fa-question"></i>
+        </div>
+        <div class="addBtn" @click="showrow = !showrow">
+          <i class="fa fa-plus"></i>
+          新增負責人員
+        </div>
+      </div>
+
+      <div class="flexRow" v-if="showrow">
+        <div class="teamClass inline">
+          <div class="teamClass__block inline">
+            <input type="checkbox" />
+            <label for>日間</label>
+          </div>
+          <div class="teamClass__block inline">
+            <input type="checkbox" />
+            <label for>夜間</label>
+          </div>
+        </div>
+        <select name id>
+          <option value selected>救護班</option>
+        </select>
+        <select name id>
+          <option value selected>負責人員姓名</option>
+        </select>
+        <div class="teamClass inline">
+          <div class="teamClass__block">
+            <input type="checkbox" />
+            <label for>此負責人為班長</label>
+          </div>
+        </div>
+      </div>
+      <template #footer>確定送出</template>
+    </TheModal>
+
+     <TheModal @closeModal="closeModal" v-if="modalTwo">
+      <template #header>新增應變工作</template>
+    <div class="planTitle">
+        <div class="planTitle__text">應變階段</div>
+        <div class="planTitle__redIcon" data-red="請綜整前述天然災害風險檢查系統評估結果+災害經驗+災害潛勢地圖分析結果，說明在什麼情境下會發生災害，以及機構面臨的風險情況。">
+          <i class="fas fa-question"></i>
+        </div>
+        <div
+          class="planTitle__greenIcon"
+          data-green="每個應變階段可有多個工作項目。"
+        >
+          <i class="fas fa-pencil-alt"></i>
+        </div>
+      </div>
+      <select name="" id="">
+        <option value="" selected>1a. 確保人員安全</option>
+      </select>
+
+      <div class="planTitle">
+        <div class="planTitle__text">工作項目</div>
+        <div class="planTitle__redIcon" data-red="請填寫選擇之應變階段對應的工作項目，為搭配後續的工作檢核表，工作項目字數勿超過12字，建議填列重點，例如：召回應變人員、收集災害資訊等，細節內容請寫在下方工作內容欄位內。
+需要思考機構的人力狀況，如果人力不足，請務必確認應變工作項目的優先順序。">
+          <i class="fas fa-question"></i>
+        </div>
+      </div>
+      <textarea placeholder="協助住民穩住重心" maxlength="500"></textarea>
+
+      <div class="planTitle">
+        <div class="planTitle__text">工作內容</div>
+        <div class="planTitle__redIcon" data-red="請詳述工作內容，確保每一位工作人員皆能明確了解工作細節，例如：1. 觀看中央氣象局網站發佈之地震速報，瞭解地震位置與震度分布。2. 以收音機或電視掌握地震造成的災情。
+撰寫過程請一併設想電力中斷、設備故障，或是其他突發狀況發生時的替代方案。">
+          <i class="fas fa-question"></i>
+        </div>
+      </div>
+      <textarea placeholder="坐下：協助站立的住民就地坐下，避免跌倒。" maxlength="500"></textarea>
+
+      <template #footer>確定送出</template>
+      </TheModal>
+
+    <div class="planHeader">
+      <div class="planHeader__title">天然災害應變流程</div>
+      <div class="planHeader__option">
+        <img src="~@/assets/img/planList/advice.png" alt />
+        <span>撰寫原則或建議</span>
+      </div>
+      <div class="planHeader__option">
+        <img src="~@/assets/img/planList/template.png" alt />
+        <span>參考撰寫範本</span>
+      </div>
+    </div>
+    <div class="planTopic">
+      <div class="themeColor">(一)地震災害應變流程</div>
+      <div
+        class="planTitle__redIcon"
+        style="
+    display: inline-block;
+    text-align: center;
+    line-height: 34px;
+    font-size: 16px;"
+        data-red="天然災害應變流程應考慮機構本身的地理環境、設備，以及人力等實際情況進行規劃。
+可依據機構需求自行上傳流程圖，或是採用本系統提供的範本。
+目前範本上為預先設定的應變步驟，實際的災害應變流程並非一成不變，機構人員要依照現場情況調整應變步驟。"
+      >
+        <i class="fas fa-question"></i>
+      </div>
+    </div>
+
+    <div class="planJob">
+      <div class="planTitle__text inline">應變工作小組內容</div>
+      <div
+        class="planTitle__redIcon"
+        style="
+    display: inline-block;
+    text-align: center;
+    line-height: 34px;
+    font-size: 16px;"
+        data-red="依據工作內容安排日間及夜間負責的應變人員。"
+      >
+        <i class="fas fa-question"></i>
+      </div>
+      <div class="addBtn" @click="modal = !modal">
+        <i class="fa fa-plus"></i>
+        分配工作項目
+      </div>
+    </div>
+
+    <table class="blueTable">
+      <thead>
+        <tr>
+          <th style="width: 15%;">應變時序</th>
+          <th style="width: 15%;">工作項目</th>
+          <th style="width: 23%;">工作內容</th>
+          <th style="width: 15%;">日間負責人</th>
+          <th style="width: 15%;">夜間負責人</th>
+          <th>修改</th>
+          <th>刪除</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th style="width: 15%;">1a. 確保人員安全</th>
+          <td style="width: 15%;">統計傷患、安排送醫</td>
+          <td style="width: 23%;">統計傷患、安排送醫</td>
+          <td style="width: 15%;">安全防護班ＯＯＯ，避難引導班ＯＯＯ</td>
+          <td style="width: 15%;">安全防護班ＯＯＯ</td>
+          <td>修改</td>
+          <td>刪除</td>
+        </tr>
+        <tr>
+          <th style="width: 15%;">1b. 動員機構人員</th>
+          <td style="width: 15%;">召回應變人員</td>
+          <td style="width: 23%;">制定人員的召回機制，包含機構的地震、颱洪應變啟動時間、集合地點、訊息通知方式</td>
+          <td style="width: 15%;">指揮官ＯＯＯ</td>
+          <td style="width: 15%;">指揮官ＯＯＯ，通報班ＯＯＯ</td>
+          <td>修改</td>
+          <td>刪除</td>
+        </tr>
+        <tr>
+          <th style="width: 15%;">1b. 動員機構人員</th>
+          <td style="width: 15%;">指揮應變小組運作</td>
+          <td style="width: 23%;">指揮應變小組運作</td>
+          <td style="width: 15%;">通報班ＯＯＯ</td>
+          <td style="width: 15%;">指揮官ＯＯＯ</td>
+          <td>修改</td>
+          <td>刪除</td>
+        </tr>
+        <tr>
+          <th style="width: 15%;">2. 收集資訊</th>
+          <td style="width: 15%;">收集災害資訊</td>
+          <td style="width: 23%;">準備兩個以上獲得災害資訊的管道</td>
+          <td style="width: 15%;">救護班ＯＯＯ</td>
+          <td style="width: 15%;">救護班ＯＯＯ</td>
+          <td>修改</td>
+          <td>刪除</td>
+        </tr>
+        <tr>
+          <th style="width: 15%;">2. 收集資訊</th>
+          <td style="width: 15%;">巡視機構周邊設施</td>
+          <td style="width: 23%;">檢查建物、重要設施（例如，水、電、瓦斯等維生管線）的損壞情況</td>
+          <td style="width: 15%;">搶救班ＯＯＯ，搶救班ＯＯＯ，搶救班ＯＯＯ</td>
+          <td style="width: 15%;">搶救班ＯＯＯ</td>
+          <td>修改</td>
+          <td>刪除</td>
+        </tr>
+        <tr>
+          <th style="width: 15%;">2. 收集資訊</th>
+          <td style="width: 15%;">收集機構災情</td>
+          <td style="width: 23%;">了解各種警戒資訊的作用與分級標準</td>
+          <td style="width: 15%;">搶救班ＯＯＯ</td>
+          <td style="width: 15%;">救護班ＯＯＯ</td>
+          <td>修改</td>
+          <td>刪除</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
+<script>
+import TheModal from "./TheModal";
+export default {
+  components: {
+    TheModal: TheModal
+  },
+  data() {
+    return {
+      modal: false,
+      modalTwo: false
+    };
+  },
+  methods: {
+    closeModal() {
+      this.modal = false;
+    }
+  }
+};
+</script>
+<style lang="scss" scoped>
+.planTopic {
+  margin: 30px auto;
+}
+
+.planTitle__text {
+  width: 200px;
+}
+
+.planJob {
+  margin: 30px auto;
+  img {
+    vertical-align: bottom;
+    margin-left: 20px;
+    margin-bottom: 4px;
+  }
+  .addBtn {
+    display: inline-block;
+    float: right;
+  }
+}
+
+label {
+  padding: 0 !important;
+  font-size: 1rem !important;
+  font-weight: normal !important;
+  &:before {
+    display: none;
+  }
+  &:after {
+    display: none;
+  }
+}
+
+.teamClass__block input[type="checkbox"] {
+  position: relative !important;
+  left: auto;
+  -webkit-appearance: checkbox;
+}
+
+select {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+</style>

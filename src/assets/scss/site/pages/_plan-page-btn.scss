@@ -1,0 +1,20 @@
+.historyBtn {
+  grid-area: btn;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+align-items: center;
+  div{
+    color:$planGreen;
+    width:200px;
+    padding:12px 0;
+    border:1px solid $planGreen;
+    text-align: center;
+    border-radius: 100px;
+  }
+  &__pre{
+    margin-right: 27px;
+  }
+  &__next{
+  }
+}

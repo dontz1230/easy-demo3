@@ -1,0 +1,157 @@
+
+.plan-section {
+  grid-area: page;
+  margin-top: 76px;
+  padding-right:46px;
+}
+
+.planHeader {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #66cdb6;
+  &__title {
+    font-size: 1.8rem;
+    margin-right: 90px;
+    color: #66cdb6;
+  }
+  &__option {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__option:first-of-type {
+    margin-right: 16px;
+    color: #f45454;
+  }
+  &__option:last-of-type {
+    margin-right: 16px;
+    color: #66cdb6;
+  }
+}
+
+.planSection {
+  display: flex;
+}
+
+.planTitle {
+  display: flex;
+  align-items: center;
+  width: 220px;
+  justify-content: space-between;
+  margin: 15px 0;
+  &__text {
+    background: #66cdb6;
+    color: #fff;
+    width: 140px;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 50em;
+  }
+  &__redIcon {
+    background: #f45454;
+    border-radius: 100%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: #fff;
+    }
+  }
+  &__greenIcon {
+    background: #66cdb6;
+    border-radius: 100%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: #fff;
+    }
+  }
+}
+
+
+.planTopic .themeColor {
+  font-size: 1.5rem;
+}
+
+.plan-section-three-two .planTopic, .plan-section-three-two .planTitle {
+  display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 23px;
+    img {
+      margin-left: 5px;
+    }
+}
+
+.fromToYear {
+  display: flex;
+    justify-content: space-between;
+    width: auto;
+    margin-bottom: 10px;
+    .normalInput {
+      height: 36px;
+    width: 133px;
+    }
+    .addBtn {
+      margin-left: 160px;
+      height: 37px;
+      margin-bottom: 0;
+      float: right;
+      padding: 4px 34px;
+    }
+    span {
+      margin: 0 6px;
+    }
+}
+
+
+table.blueTable {
+  border: 0px solid #FFFFFF;
+  width: 100%;
+  text-align: left;
+  background: #f2f2f2;
+  border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 3px;
+}
+
+table.blueTable thead {
+  background: #66CDB6;
+  border-bottom: 1px solid #FFFFFF;
+}
+table.blueTable thead th {
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 1px solid #FFFFFF;
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+table.blueTable tfoot td {
+  font-size: 14px;
+}
+
+.plan-section-three-four .planTopic {
+  display: flex;
+  align-items: center;
+  .addBtn {
+    margin-left: 160px;
+    height: 37px;
+    margin-bottom: 0;
+    float: right;
+    padding: 4px 34px;
+  }
+}
+
+.inline {
+  display: inline-block;
+}

@@ -1,0 +1,136 @@
+.plan-section {
+  grid-area: page;
+  margin-top: 76px;
+  padding-right:46px;
+}
+
+.planHeader {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #66cdb6;
+  &__title {
+    font-size: 1.8rem;
+    margin-right: 90px;
+    color: #66cdb6;
+  }
+  &__option {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__option:first-of-type {
+    margin-right: 16px;
+    span {
+      color: #f45454;
+    }
+  }
+  &__option:last-of-type {
+    margin-right: 16px;
+    span {
+      color: #66cdb6;
+    }
+  }
+}
+
+.planSection {
+  display: flex;
+}
+
+.planTitle {
+  display: flex;
+  align-items: center;
+  width: 220px;
+  justify-content: space-between;
+  margin: 15px 0;
+  &__text {
+    background: #66cdb6;
+    color: #fff;
+    width: 140px;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 50em;
+  }
+  &__redIcon {
+    position: relative;
+    background: #f45454;
+    border-radius: 100%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: #fff;
+    }
+  }
+  &__greenIcon {
+    background: #66cdb6;
+    border-radius: 100%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      color: #fff;
+    }
+  }
+}
+
+
+.planTitle__redIcon:hover {
+  &::before{
+    content: attr(data-red);
+    position: absolute;
+    top: 40px;
+    width:400px;
+    left: 0;
+    background: #f45454;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 8px;
+  z-index: 99;
+}
+}
+
+.planTitle__greenIcon:hover {
+  &::before{
+    content: attr(data-green);
+    position: absolute;
+    top: 40px;
+    width:400px;
+    left: 0;
+    background: #66cdb6;
+    color: #fff;
+    padding: 2px 10px;
+    border-radius: 8px;
+  z-index: 99;
+}
+}
+
+.planTitle__greenIcon:hover:after{ /*實現小三角*/
+			content: "";
+			position: absolute;
+			left: 100%;
+			top: 100%;
+			margin: -10px 0 0 -8px;
+			width: 0;
+			height: 0;
+			border-width: 10px;
+			border-color: transparent transparent  #66cdb6 transparent;
+			border-style: solid;
+    }
+    
+    .planTitle__redIcon:hover:after{ /*實現小三角*/
+			content: "";
+			position: absolute;
+			left: 100%;
+			top: 100%;
+			margin: -10px 0 0 -8px;
+			width: 0;
+			height: 0;
+			border-width: 10px;
+			border-color: transparent  transparent #f45454 transparent;
+			border-style: solid;
+		}

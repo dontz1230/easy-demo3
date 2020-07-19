@@ -1,0 +1,83 @@
+html {
+  font-size: $fs + px;
+}
+body {
+  line-height: 1.8;
+  font-weight: 400;
+  * {
+    font-family: Arial, "文泉驛正黑", "PingFangSC-Regular", "WenQuanYi Zen Hei",
+      "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif !important;
+  }
+}
+
+._font--bold {
+  font-weight: 600 !important;
+}
+._font--black {
+  font-weight: 900 !important;
+}
+._font--en {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+._font--white {
+  color: white;
+}
+._font--hoverWhite {
+  &:hover {
+    color: white !important;
+  }
+}
+._font__title {
+  @include _font-p2r(32);
+  @extend ._font--bold;
+  line-height: 1.4;
+  @media screen and (min-width: 768px) {
+    @include _font-p2r(36);
+  }
+}
+._font__title--large {
+  @include _font-p2r(42);
+  @extend ._font--bold;
+  line-height: 1.4;
+  @media screen and (min-width: 768px) {
+    @include _font-p2r(48);
+  }
+}
+._font__title--small {
+  @include _font-p2r(22);
+  @extend ._font--bold;
+  line-height: 1.4;
+  @media screen and (min-width: 768px) {
+    @include _font-p2r(24);
+  }
+}
+._font__title--item {
+  @include _font-p2r(26);
+  @extend ._font--bold;
+  line-height: 1.4;
+  @media screen and (min-width: 768px) {
+    @include _font-p2r(28);
+  }
+}
+
+._font--xl {
+  @include _font-p2r(24);
+  line-height: 1.4;
+}
+._font--l {
+  @include _font-p2r(20);
+  line-height: 1.4;
+}
+._font--s {
+  @include _font-p2r(16);
+}
+._font--xs {
+  @include _font-p2r(14);
+}
+._font--xxs {
+  @include _font-p2r(12);
+}
+
+._font--warning {
+  color: $themeWarning;
+}

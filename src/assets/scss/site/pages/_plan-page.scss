@@ -1,0 +1,71 @@
+.planTitle__redIcon svg {
+  color: #fff;
+}
+
+.planTitle__greenIcon svg {
+  color: #fff;
+}
+
+.plan-page {
+  position: relative;
+  display: grid;
+  grid-template-columns: 320px auto ;
+  grid-template-areas:
+    "panel panel"
+    "catelogue page"
+    "catelogue btn"
+}
+
+
+.themeColor {
+  color: #66cdb6;
+}
+
+.redColor {
+  color: #F45656;
+}
+
+.twoColumn {
+  display:grid;
+  grid-template-columns: 289px auto;
+  grid-gap: 8px;
+  grid-template-rows: 53px;
+    margin-bottom: 8px;
+}
+
+.threeColumn {
+  display:grid;
+  grid-template-columns: 289px 201px auto;
+  grid-gap: 8px;
+  grid-template-rows: 53px;
+    margin-bottom: 8px;
+}
+
+.greyInput{
+  background:#ECECEC!important;
+  border:1px solid #D4D4D4!important;
+  border-radius: 8px!important;
+  padding: 20px!important;
+  color:#767676!important;
+}
+
+.textDarkGrey {
+  color:#767676;
+}
+
+.normalInput {
+  height: 53px;
+  border:1px solid #D4D4D4;
+}
+
+.planHeader__option span{
+  color:#F45454;
+}
+
+.w-100 {
+      width: 100%;
+}
+
+.txt-center {
+  text-align: center;
+}

@@ -1,0 +1,48 @@
+.btn{
+	@extend ._font--s;
+	padding:28px 32px;
+	width:100%;
+	box-shadow:none!important;
+	&:hover{
+		background-color: darken($primary,5%);
+		color:white;
+	}
+	&--w100{
+		width:100%!important;
+		max-width: 100%!important;
+	}
+	&--whiteBg{
+		background-color: white;
+		color:$themePurple;
+		&:hover{
+			background-color: white;
+			color: darken($themePurple,10%);
+		}
+	}
+	&-outline-black{
+		border-color:#333;
+		color:#333;
+		background-color:transparent;
+		&:hover{
+			border-color:black;
+			color:black;
+			background-color:transparent;
+		}
+	}
+	&-outline-white{
+		border-color:white;
+		color:white;
+		background-color:transparent;
+		&:hover{
+			color:white;
+			background-color:white;
+			color:$themePurple;
+		}
+	}
+	&--capsule{
+		border-radius: 99px;
+	}
+	@media screen and (min-width: 576px) {
+		max-width: 220px;
+	}
+}

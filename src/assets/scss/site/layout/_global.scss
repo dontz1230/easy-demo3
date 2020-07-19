@@ -1,0 +1,153 @@
+#app{
+	overflow: hidden;
+}
+body {
+	background-color: #f8f8f8;
+	*{
+		position: relative;
+	}
+}
+main{
+	padding-top: $header-height--m;
+	@media screen and (min-width: 768px) {
+		padding-top: $header-height;
+	}
+}
+//overwrite bootstrap container
+.container{
+	max-width: 100%;
+	padding:0 $px;
+	@media screen and (min-width: 1440px) {
+		max-width: 1280px;
+		padding: 0;
+		// margin-left: calc((100vw - 1440px) / 2);
+	}
+	// @media screen and (min-width: 1600px) {
+	// 	max-width: 1440px;
+	// 	padding: 0;
+	// 	margin-left: calc((100vw - 1440px) / 2);
+	// }
+}
+.pagination-list{
+	margin-top: 30px;
+}
+input,button {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	padding: 0;
+	border:none;
+	background: transparent;
+	&:focus {
+		outline: none;
+	}
+}
+button{
+	cursor: pointer;
+}
+.page{
+	padding: #{$page-py/2} 0;
+	@media screen and (min-width: 768px) {
+		padding: $page-py 0;
+	}
+}
+footer {
+	background-color: #fff;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+
+.sm-br{
+	@media screen and (min-width: 576px) {
+		display: block;
+		line-height: 1;
+		font-size: 0;
+	}
+}
+.md-br{
+	@media screen and (min-width: 768px) {
+		display: block;
+		line-height: 1;
+		font-size: 0;
+	}
+}
+.lg-br{
+	@media screen and (min-width: 992px) {
+		display: block;
+		line-height: 1;
+		font-size: 0;
+	}
+}
+.swiper-nav{
+	outline: none!important;
+	padding:20px 0;
+	cursor: pointer;
+}
+.swiper-arrow{
+	font-size: 0.6rem;
+}
+.swiper-slide {
+	height: auto!important;
+	align-self: stretch!important;
+}
+.swiper-pagination-bullet {
+	width:15px!important;
+	height:15px!important;
+	background: white!important;
+	border: 4px solid white!important;
+	opacity: 1!important;
+	margin-right: 20px;
+}
+.swiper-pagination-bullet-active {
+	background: $primary !important;
+}
+.swiper-list .swiper-slide{
+	width:auto;
+}
+
+
+
+._global-page-h {
+	@extend ._font__title;
+	display: inline-block;
+	color: $themePurple;
+}
+
+._global__section{
+	padding-top:50px;
+	padding-bottom:50px;
+	@media screen and (min-width: 768px) {
+		padding-top:120px;
+		padding-bottom:120px;
+	}
+}
+._global__loading{
+	width:100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+	left:0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255,255,255,0.9);
+	z-index: 9999;
+	span{
+		@extend ._font--bold;
+		display: block;
+        margin-top:15px;
+        color:$themePurple
+	}
+}
+
+.menuOn{
+	overflow: hidden;
+	.headroom--unpinned{
+		top:0!important;
+	}
+}
