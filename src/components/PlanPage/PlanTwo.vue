@@ -17,14 +17,24 @@
         <i class="fas fa-question"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+    <div class="textContainer">
+        <img v-if="pointing === 1" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 1"  @input="descInput(items[0],items[0].content);" v-model="items[0].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[0].remnant}} / 50</p>
+      </div>
+      
     <div class="planTitle">
       <div class="planTitle__text">機構地址</div>
       <div class="planTitle__redIcon" data-red="機構完整地址包含村里。">
         <i class="fas fa-question"></i>
       </div>
     </div>
-    <textarea placeholder="新北市健康區安心里長壽路1號1~2樓" class name id maxlength="500"></textarea>
+   
+    <div class="textContainer">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png"  place-holder="新北市健康區安心里長壽路1號1~2樓"/>
+        <textarea @focus="pointing= 2"  @input="descInput(items[1],items[1].content);" v-model="items[1].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[1].remnant}} / 50</p>
+      </div>
 
     <div class="planTitle">
       <div class="planTitle__text">機構類型</div>
@@ -47,7 +57,7 @@
         <label for>一般護理之家</label>
       </div>
     </div>
-    <div class="checkBlock">
+    <div class="checkBlock col-3">
       <div class="checkContainer">
         <input type="checkbox" name id />
         <label for>精神護理之家</label>
@@ -61,7 +71,7 @@
         <label for>住宿式長照機構(含提供住宿服務之綜合長照機構)</label>
       </div>
     </div>
-    <div class="checkBlock">
+    <div class="checkBlock" style="margin-bottom: 36px;">
       <div class="checkContainer">
         <input type="checkbox" name id />
         <label for>其他</label>
@@ -74,22 +84,27 @@
         <i class="fas fa-question"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+     <div class="textContainer">
+        <img v-if="pointing === 3" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 3"  @input="descInput(items[2],items[2].content);" v-model="items[2].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[2].remnant}} / 50</p>
+      </div>
+
     <div class="planTitle">
-      <div class="planTitle__text">可自行增補其他項目</div>
+      <div class="planTitle__text" style="width: 200px;">可自行增補其他項目</div>
       <div class="planTitle__redIcon" data-red="可自行增補其他基本且重要的機構資訊。">
         <i class="fas fa-question"></i>
       </div>
     </div>
     <div class="twoColumn">
-      <input type="text" name id />
-      <input type="text" name id />
+      <input type="text" placeholder="項目名稱" id />
+      <input type="text" placeholder="項目內容" id />
     </div>
     <div class="twoColumn">
-      <input type="text" name id />
-      <input type="text" name id />
+      <input type="text" placeholder="項目名稱" id />
+      <input type="text" placeholder="項目內容" id />
     </div>
-    <div class="addBtn">
+    <div class="addBtn fl-r ">
       <i class="fa fa-plus"></i>
       新增機構資訊
     </div>
@@ -98,7 +113,26 @@
 <script>
 export default {
   data() {
-    return {};
-  }
+    return {
+      items: [
+        { content: "", remnant:50 },
+        { content: "", remnant:50 },
+        { content: "", remnant:50 },
+      ],
+      pointing:0
+    };
+  },
+  methods: {
+     descInput(item,text){
+      var txtVal = text.length;
+      item.remnant = 50 - txtVal;
+  },
+  },
 };
 </script>
+<style lang="scss">
+  input[type="text"] {
+    background: #fff;
+    border: 1px solid;
+  }
+</style>

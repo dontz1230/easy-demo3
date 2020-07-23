@@ -42,12 +42,14 @@
 
     <div class="teamClass">
       <div class="teamClass__block">
-        <input type="checkbox" />
-        <label class="label" for>使用範本流程圖</label>
+      <span>使用範本流程圖</span>
+        <input type="checkbox"name="temp" />
+        <label class="label" for="temp"></label>
       </div>
       <div class="teamClass__block">
-        <input type="checkbox" />
-        <label class="label" for>自行上傳流程圖</label>
+      <span>自行上傳流程圖</span>
+        <input type="checkbox" id="upload"/>
+        <label class="label" for="upload"></label>
       </div>
     </div>
     <img src="~@/assets/img/planList/process-template.jpg" alt />
@@ -67,7 +69,7 @@ export default {
 
 .teamClass {
   display: flex;
-  width: 400px;
+      width: 500px;
   justify-content: space-between;
   margin-bottom: 15px;
   &__block {
@@ -102,7 +104,7 @@ export default {
 }
 
 .planJob {
-  margin: 30px auto;
+  margin: 10px auto;
   img {
     vertical-align: bottom;
     margin-left: 20px;

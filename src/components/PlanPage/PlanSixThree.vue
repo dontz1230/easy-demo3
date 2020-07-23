@@ -102,8 +102,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;">第一優先聯絡</th>
-          <th>修改</th>
-          <th>刪除</th>
+          <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">通報單位</th>
@@ -111,8 +111,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;">第一優先聯絡</th>
-          <th>修改</th>
-          <th>刪除</th>
+         <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">救助單位</th>
@@ -120,8 +120,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;">第一優先聯絡</th>
-          <th>修改</th>
-          <th>刪除</th>
+          <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">救助單位</th>
@@ -129,8 +129,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+          <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">救助單位</th>
@@ -138,8 +138,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+          <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">醫療單位</th>
@@ -147,8 +147,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;">特約醫院</th>
-          <th>修改</th>
-          <th>刪除</th>
+          <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">醫療單位</th>
@@ -156,8 +156,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+           <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">撤離與安置單位</th>
@@ -165,8 +165,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;">第一優先聯絡撤離交通工具者</th>
-          <th>修改</th>
-          <th>刪除</th>
+      <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">撤離與安置單位</th>
@@ -174,8 +174,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;">民間救護車</th>
-          <th>修改</th>
-          <th>刪除</th>
+          <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">維生管線修復單位</th>
@@ -183,8 +183,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+         <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">維生管線修復單位</th>
@@ -192,8 +192,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+          <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">其他協力廠商</th>
@@ -201,8 +201,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;">洗衣設備公司</th>
-          <th>修改</th>
-          <th>刪除</th>
+         <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 16%;">其他協力廠商</th>
@@ -210,8 +210,8 @@
           <th>ＯＯＯ</th>
           <th style="width: 20%;">02-XXXXXX</th>
           <th style="width: 18%;">發電機設備維護廠商</th>
-          <th>修改</th>
-          <th>刪除</th>
+           <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
       </tbody>
     </table>
@@ -245,7 +245,7 @@ export default {
 }
 
 .planJob {
-  margin: 30px auto;
+  margin: 10px auto;
   img {
     vertical-align: bottom;
     margin-left: 20px;
@@ -255,5 +255,9 @@ export default {
     display: inline-block;
     float: right;
   }
+}
+
+textarea {
+  width:100%!important;
 }
 </style>

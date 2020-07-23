@@ -33,7 +33,7 @@
           <i class="fas fa-pencil-alt"></i>
         </div>
       </div>
-      <select name="" id="">
+      <select name="" id="" style="margin-bottom: 12px;">
         <option value="" selected>1a. 確保人員安全</option>
       </select>
 
@@ -44,7 +44,11 @@
           <i class="fas fa-question"></i>
         </div>
       </div>
-      <textarea placeholder="協助住民穩住重心" maxlength="500"></textarea>
+      <div class="textContainer">
+        <img v-if="pointing === 1" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 1" placeholder="協助住民穩住重心" @input="descInput(items[0],items[0].content);" v-model="items[0].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[0].remnant}} / {{items[0].limit}}</p>
+      </div>
 
       <div class="planTitle">
         <div class="planTitle__text">應變階段</div>
@@ -53,7 +57,11 @@
           <i class="fas fa-question"></i>
         </div>
       </div>
-      <textarea placeholder="坐下：協助站立的住民就地坐下，避免跌倒。" maxlength="500"></textarea>
+      <div class="textContainer">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png"  place-holder="新北市健康區安心里長壽路1號1~2樓"/>
+        <textarea @focus="pointing= 2" placeholder="坐下：協助站立的住民就地坐下，避免跌倒。"  @input="descInput(items[1],items[1].content);" v-model="items[1].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[1].remnant}} / {{items[1].limit}}</p>
+      </div>
 
       <template #footer>確定送出</template>
     </TheModal>
@@ -158,16 +166,18 @@
       </div>
     </div>
 
-    <div class="teamClass">
+    <div class="teamClass" style="width: 480px;">
       <div class="teamClass__block">
-        <input type="checkbox" />
-        <label for>三班</label>
-        <button @click="modalOne = !modalOne">修改</button>
+      <span>三班</span>
+        <input name="thre" type="checkbox" />
+        <label for="thre"></label>
+        <button style="padding: 4px 0;width: 89px;" @click="modalOne = !modalOne">修改</button>
       </div>
       <div class="teamClass__block">
-        <input type="checkbox" />
-        <label for>五班</label>
-        <button @click="modalOne = !modalOne">修改</button>
+      <span>五班</span>
+        <input name="fiv" type="checkbox" />
+        <label for="fiv"></label>
+        <button style="padding: 4px 0;width: 89px;"@click="modalOne = !modalOne">修改</button>
       </div>
     </div>
 
@@ -256,14 +266,23 @@ export default {
   data() {
     return {
       modalOne: false,
-      modalTwo: false
+      modalTwo: false,
+      pointing:0,
+       items: [
+        { content: "", remnant:50,limit:50 },
+        { content: "", remnant:50,limit:500 },
+      ],
     };
   },
   methods: {
     closeModal() {
       this.modalOne = false;
       this.modalTwo = false;
-    }
+    },
+    descInput(item,text){
+      var txtVal = text.length;
+      item.remnant = item.limit - txtVal;
+  },
   }
 };
 </script>
@@ -308,7 +327,7 @@ label {
 }
 
 .planJob {
-  margin: 30px auto;
+  margin: 10px auto;
   img {
     vertical-align: bottom;
     margin-left: 20px;

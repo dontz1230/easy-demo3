@@ -5,36 +5,73 @@
      <div class="planTitle">
         <div class="planTitle__text">物資分類</div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 1" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 1"  @input="descInput(items[0],items[0].content);" v-model="items[0].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[0].remnant}} / 50</p>
+      </div>
       <div class="planTitle">
         <div class="planTitle__text">物資名稱</div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+<div class="textContainer">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 2"  @input="descInput(items[1],items[1].content);" v-model="items[1].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[1].remnant}} / 50</p>
+      </div>
+
       <div class="planTitle">
         <div class="planTitle__text">必要數量</div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 3" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 3"  @input="descInput(items[2],items[2].content);" v-model="items[2].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[2].remnant}} / 50</p>
+      </div>
+
       <div class="planTitle">
         <div class="planTitle__text">現有數量</div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 4" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 4"  @input="descInput(items[3],items[3].content);" v-model="items[3].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[3].remnant}} / 50</p>
+      </div>
+
      <div class="planTitle">
         <div class="planTitle__text">保管場所</div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 5" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 5"  @input="descInput(items[4],items[4].content);" v-model="items[4].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[4].remnant}} / 50</p>
+      </div>
 
       <div class="planTitle">
         <div class="planTitle__text">有效期限</div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+<div class="textContainer">
+        <img v-if="pointing === 6" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 6"  @input="descInput(items[5],items[5].content);" v-model="items[5].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[5].remnant}} / 50</p>
+      </div>
+
       <div class="planTitle">
         <div class="planTitle__text">供應商名稱</div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+<div class="textContainer">
+        <img v-if="pointing === 7" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 7"  @input="descInput(items[6],items[6].content);" v-model="items[6].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[6].remnant}} / 50</p>
+      </div>
+
       <div class="planTitle">
         <div class="planTitle__text">供應商聯絡方式</div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+<div class="textContainer">
+        <img v-if="pointing === 8" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 8"  @input="descInput(items[7],items[7].content);" v-model="items[7].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[7].remnant}} / 50</p>
+      </div>
       
     
       <template #footer>確定送出</template>
@@ -68,7 +105,10 @@
     <div class="planJob">
       <div class="planTitle__text inline">物資儲備標準</div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+    <div class="textContainer">
+        <img v-if="pointing === 10" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 10"    class name id maxlength="50"></textarea>
+      </div>
 
     <div class="planJob">
       <div class="planTitle__text inline">儲備物資</div>
@@ -114,8 +154,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+          <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th>食物</th>
@@ -126,8 +166,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+           <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th>食物</th>
@@ -138,8 +178,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+          <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th>食物</th>
@@ -150,8 +190,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+         <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th>醫療用品</th>
@@ -162,8 +202,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+           <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th>醫療用品</th>
@@ -174,8 +214,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+         <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th>醫療用品</th>
@@ -186,8 +226,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+          <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th>生活用品</th>
@@ -198,8 +238,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+          <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th>生活用品</th>
@@ -210,8 +250,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+           <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th>生活用品</th>
@@ -222,8 +262,8 @@
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
           <th style="width: 12%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+           <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
       </tbody>
     </table>
@@ -237,13 +277,28 @@ export default {
   },
   data() {
     return {
-      modal:false
+      modal:false,
+       items: [
+        { content: "", remnant:50 },
+        { content: "", remnant:50 },
+        { content: "", remnant:50 },
+        { content: "", remnant:50 },
+        { content: "", remnant:50 },
+        { content: "", remnant:50 },
+        { content: "", remnant:50 },
+        { content: "", remnant:50 },
+      ],
+      pointing:0
     };
   },
   methods:{
     closeModal(){
       this.modal = false;
-    }
+    },
+    descInput(item,text){
+      var txtVal = text.length;
+      item.remnant = 50 - txtVal;
+  },
   }
 };
 </script>
@@ -257,7 +312,7 @@ export default {
 }
 
 .planJob {
-  margin: 30px auto;
+  margin: 20px auto;
   img {
     vertical-align: bottom;
     margin-left: 20px;

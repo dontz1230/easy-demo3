@@ -1,6 +1,6 @@
 <template>
   <div class="plan-section plan-section-three-four">
-     <TheModal @closeModal="closeModal" v-if="modal">
+      <TheModal @closeModal="closeModal" v-if="modal">
       <template #header>新增避難移動工具</template>
     <div class="planTitle">
         <div class="planTitle__text">工具名稱</div>
@@ -9,7 +9,11 @@
           <i class="fas fa-question"></i>
         </div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+       <div class="textContainer">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 2" @input="descInput(items[1],items[1].content);" v-model="items[1].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[1].remnant}} / {{items[1].limit}}</p>
+      </div>
 
       <div class="planTitle">
         <div class="planTitle__text">工具數量</div>
@@ -17,7 +21,11 @@
           <i class="fas fa-question"></i>
         </div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 3" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 3" @input="descInput(items[2],items[2].content);" v-model="items[2].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[2].remnant}} / {{items[2].limit}}</p>
+      </div>
 
       <div class="planTitle">
         <div class="planTitle__text">置放場所</div>
@@ -25,7 +33,11 @@
           <i class="fas fa-question"></i>
         </div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 4" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 4" @input="descInput(items[3],items[3].content);" v-model="items[3].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[3].remnant}} / {{items[3].limit}}</p>
+      </div>
 
        <div class="planTitle">
         <div class="planTitle__text">備註</div>
@@ -33,10 +45,15 @@
           <i class="fas fa-question"></i>
         </div>
       </div>
-     <textarea name="" id="" cols="30" rows="10"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 5" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 5" @input="descInput(items[4],items[4].content);" v-model="items[4].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[4].remnant}} / {{items[4].limit}}</p>
+      </div>
 
     
       <template #footer>確定送出</template>
+    </TheModal>
     </TheModal>
 
     <div class="planHeader">
@@ -227,16 +244,16 @@
           <th>20</th>
           <th style="width: 23%;">14台在每一個房間門口<br>6台在一樓倉庫</th>
           <th style="width: 23%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+          <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
         <tr>
           <th style="width: 23%;">擔架</th>
           <th>6</th>
           <th style="width: 23%;">一樓倉庫</th>
           <th style="width: 23%;"></th>
-          <th>修改</th>
-          <th>刪除</th>
+          <th class="underline">修改</th>
+          <th class="underline">刪除</th>
         </tr>
       </tbody>
     </table>
@@ -250,13 +267,24 @@ export default {
   },
   data() {
     return {
-      modal:false
+      modal:false,
+       items: [
+        { content: "", remnant:50,limit:50 },
+        { content: "", remnant:50,limit:50 },
+        { content: "", remnant:20,limit:20 },
+        { content: "", remnant:500,limit:500 },
+        { content: "", remnant:500,limit:500 },
+      ],
     };
   },
   methods:{
     closeModal(){
       this.modal = false;
-    }
+    },
+    descInput(item,text){
+      var txtVal = text.length;
+      item.remnant = item.limit - txtVal;
+  },
   }
 };
 </script>
@@ -270,7 +298,7 @@ export default {
 }
 
 .planJob {
-  margin: 30px auto;
+  margin: 10px auto;
   img {
     vertical-align: bottom;
     margin-left: 20px;
@@ -280,5 +308,9 @@ export default {
     display: inline-block;
     float: right;
   }
+}
+
+textarea {
+  width:100%;
 }
 </style>

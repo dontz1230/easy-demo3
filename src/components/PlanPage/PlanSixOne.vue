@@ -39,7 +39,11 @@
         <i class="fas fa-pencil-alt"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+      <div class="textContainer">
+        <img v-if="pointing === 1" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 1"  @input="descInput(items[0],items[0].content);" v-model="items[0].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[0].remnant}} / 500</p>
+      </div>
 
     <div class="planJob">
       <div class="planTitle__text inline">教育訓練對象</div>
@@ -68,7 +72,11 @@
         <i class="fas fa-pencil-alt"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 2"  @input="descInput(items[1],items[1].content);" v-model="items[1].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[1].remnant}} / 500</p>
+      </div>
 
     <div class="planJob">
       <div class="planTitle__text inline">教育訓練頻率</div>
@@ -97,7 +105,11 @@
         <i class="fas fa-pencil-alt"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 3" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 3"  @input="descInput(items[2],items[2].content);" v-model="items[2].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[2].remnant}} / 500</p>
+      </div>
 
     <div class="planJob">
       <div class="planTitle__text inline">演練項目</div>
@@ -125,7 +137,11 @@
         <i class="fas fa-pencil-alt"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 4" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 4"  @input="descInput(items[3],items[3].content);" v-model="items[3].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[3].remnant}} / 500</p>
+      </div>
 
     <div class="planJob">
       <div class="planTitle__text inline">演練參與對象</div>
@@ -152,7 +168,11 @@
         <i class="fas fa-pencil-alt"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 5" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 5"  @input="descInput(items[4],items[4].content);" v-model="items[4].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[4].remnant}} / 500</p>
+      </div>
 
     <div class="planJob">
       <div class="planTitle__text inline">演練頻率</div>
@@ -179,7 +199,11 @@
         <i class="fas fa-pencil-alt"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 6" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 6"  @input="descInput(items[5],items[5].content);" v-model="items[5].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[5].remnant}} / 500</p>
+      </div>
 
     <div class="planJob">
       <div class="planTitle__text inline">紀錄檢討</div>
@@ -206,7 +230,11 @@
         <i class="fas fa-pencil-alt"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+ <div class="textContainer">
+        <img v-if="pointing === 7" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 7"  @input="descInput(items[6],items[6].content);" v-model="items[6].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[6].remnant}} / 500</p>
+      </div>
 
     <div class="planJob">
       <div class="planTitle__text inline">演練照片</div>
@@ -234,7 +262,26 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+       modal:false,
+       items: [
+        { content: "", remnant:500 },
+        { content: "", remnant:500 },
+        { content: "", remnant:500 },
+        { content: "", remnant:500 },
+        { content: "", remnant:500 },
+        { content: "", remnant:500 },
+        { content: "", remnant:500 },
+      ],
+      pointing:0
+    };
+  }
+  ,
+  methods:{
+    descInput(item,text){
+      var txtVal = text.length;
+      item.remnant = 500 - txtVal;
+  },
   }
 };
 </script>
@@ -248,7 +295,7 @@ export default {
 }
 
 .planJob {
-  margin: 30px auto;
+  margin: 10px auto;
   img {
     vertical-align: bottom;
     margin-left: 20px;
@@ -258,5 +305,12 @@ export default {
     display: inline-block;
     float: right;
   }
+}
+.planTitle__redIcon {
+  margin: 0 12px;
+}
+
+textarea {
+  width:100%;
 }
 </style>

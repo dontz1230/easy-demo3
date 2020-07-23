@@ -4,15 +4,25 @@
   padding-right:46px;
 }
 
+.plan-edit {
+    grid-area: page;
+  margin-top: 76px;
+  padding-right:46px;
+}
+
 .planHeader {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding-bottom: 4px;
   border-bottom: 2px solid #66cdb6;
+      margin-bottom: 25px;
   &__title {
-    font-size: 1.8rem;
-    margin-right: 90px;
+    margin-right: 26px;
     color: #66cdb6;
+        height: 36px;
+    line-height: 36px;
+    font-size: 30px;
+        font-weight: bold;
   }
   &__option {
     display: flex;
@@ -42,14 +52,17 @@
   align-items: center;
   width: 220px;
   justify-content: space-between;
-  margin: 15px 0;
+      margin-bottom: 12px;
   &__text {
     background: #66cdb6;
     color: #fff;
     width: 140px;
     text-align: center;
-    padding: 6px 0;
     border-radius: 50em;
+    font-weight: bold;
+        height: 39px;
+    padding: 0;
+    line-height: 39px;
   }
   &__redIcon {
     position: relative;

@@ -2,8 +2,9 @@
   <div class="plan-page">
     <loading v-if="isLoading" />
     <div class="saveBtn">儲存</div>
-    <PlanPanel />
-    <PlanCatelogue @changeStep="changeStep"/>
+    <PlanPanel  />
+    <div class="planContent">
+     <PlanCatelogue @changeStep="changeStep" v-if="step!==0" />
     <PlanEdit v-if="step===0"/>
     <PlanOne v-if="step===1"/>
     <PlanTwo  v-if="step===2"/>
@@ -23,6 +24,8 @@
     <PlanSixOne v-if="step === 14"/>
     <PlanSixTwo v-if="step === 15"/>
     <PlanSixThree v-if="step===16" />
+    </div>
+   
     <!-- <PreviousNext @prevNext="prevNext(step)" :step="step" /> -->
      <div class="historyBtn">
     <div class="historyBtn__pre" v-if="step !== 1" @click="prevNext(-1)">上一步</div>
@@ -108,8 +111,10 @@ export default {
     text-align: center;
     position:fixed;
     right: 10px;
-    top:50%;
     z-index:9999;
     color:#fff;
+        font-size: 24px;
+    font-weight: bold;
+    bottom: 100px;
   }
 </style>

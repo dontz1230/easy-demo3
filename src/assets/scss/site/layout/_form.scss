@@ -44,6 +44,10 @@ textarea {
 	color: $grey3;
 	width: 100%;
 	border-radius: 0;
+	overflow-y:hidden;
+}
+textarea::-webkit-scrollbar {
+	display:none;
 }
 input[type="text"]:disabled {
 	color: #666;

@@ -2,26 +2,16 @@
   <div class="planProduction">
     <loading v-if="isLoading" />
     <h1 class="title">長照機構災管計畫產製工具</h1>
-    <swiper class="swiper" :options="swiperOption">
-      <swiper-slide>
+    <div class="swiper" :options="swiperOption">
+      <div class="imgContainer">
         <img v-if="active === 1" src="../assets/img/planList/01.jpg" alt />
         <img v-if="active === 2" src="../assets/img/planList/02.jpg" alt />
         <img v-if="active === 3" src="../assets/img/planList/03.jpg" alt />
         <img v-if="active === 4" src="../assets/img/planList/04.jpg" alt />
-      </swiper-slide>
-      <!-- <swiper-slide>
-        <img src="../assets/img/planList/02.jpg" alt />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="../assets/img/planList/03.jpg" alt />
-      </swiper-slide>
-      <swiper-slide>
-        <img src="../assets/img/planList/04.jpg" alt />
-      </swiper-slide> -->
-      <div class="swiper-pagination" style="color:#fff;" slot="pagination"></div>
-      <div v-if="active !== 1" class="swiper-button-prev" @click="changePage('prev')" style="color:#fff;" slot="button-prev"></div>
-      <div v-if="active !==4 " class="swiper-button-next" @click="changePage('next')"  style="color:#fff;" slot="button-next"></div>
-    </swiper>
+      </div>
+      <div v-if="active !== 1" class="swiper-button-prev" @click="changePage('prev')" style="color:#fff;"></div>
+      <div v-if="active !==4 " class="swiper-button-next" @click="changePage('next')"  style="color:#fff;"></div>
+    </div>
     <div class="dotContainer">
       <div
         class="dot"
@@ -89,6 +79,8 @@ export default {
 .planProduction {
   width: 90%;
   margin: auto;
+  height: 100%;
+  overflow:hidden;
 }
 .title {
   font-size: 1.5rem;
@@ -96,6 +88,10 @@ export default {
   padding: 36px 22px;
 }
 
+.imgContainer {
+      border-radius: 28px;
+    overflow: hidden;
+}
 img {
   width: 100%;
 }
@@ -137,16 +133,17 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 16px;
 }
 
 .activeDot {
-  background:#66cdb6!important;
+  background:#008780!important;
 }
 
 .skip {
   margin: 0 10px;
   display: inline-block;
-  background: #66cdb6;
+  background: #008780;
   color: #fff;
   border: 1px solid #efefef;
   padding: 0px 16px;

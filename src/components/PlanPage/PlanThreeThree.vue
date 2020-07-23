@@ -1,6 +1,6 @@
 <template>
   <div class="plan-section plan-section-three-two">
-    <TheModal @closeModal="closeModal" v-if="modal">
+   <TheModal @closeModal="closeModal" v-if="modal">
       <template #header>新增受災經驗</template>
       <div class="planTitle">
         <div class="planTitle__text">災害類型</div>
@@ -19,20 +19,24 @@
 
       <div class="teamClass" style="display: flex;">
         <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>地震</label>
+           <span>地震</span>
+          <input name="A" type="checkbox" />
+          <label for="A"></label>
         </div>
         <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>坡地災害</label>
+          <span>坡地災害</span>
+          <input  name="B" type="checkbox" />
+          <label for="B"></label>
         </div>
         <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>水災</label>
+          <span>水災</span>
+          <input  name="C" type="checkbox" />
+          <label for="C"></label>
         </div>
         <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>其他</label>
+        <span>其他</span>
+          <input  name="D" type="checkbox" />
+          <label for="D"></label>
         </div>
       </div>
 
@@ -42,25 +46,33 @@
           <i class="fas fa-question"></i>
         </div>
       </div>
-      <textarea class name id maxlength="500"></textarea>
+      <div class="textContainer">
+        <img v-if="pointing === 1" src="~@/assets/img/planList/point.png"  place-holder="新北市健康區安心里長壽路1號1~2樓"/>
+        <textarea @focus="pointing= 1"  @input="descInput(items[0],items[0].content);" v-model="items[0].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[0].remnant}} /  {{items[0].limit}}</p>
+      </div>
 
       <div class="planTitle">
         <div class="planTitle__text">事件名稱</div>
         <div class="planTitle__redIcon" data-red="如：蘇迪勒颱風、0823熱帶性低壓、0612豪雨等。">
           <i class="fas fa-question"></i>
         </div>
-        <div class="planTitle__greenIcon" data-green="0823熱帶性低氣壓水災">
+        <div
+          class="planTitle__greenIcon"
+          data-green="0823熱帶性低氣壓水災"
+        >
           <i class="fas fa-pencil-alt"></i>
         </div>
       </div>
-      <textarea class name id maxlength="500"></textarea>
+      <div class="textContainer">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png"  place-holder="新北市健康區安心里長壽路1號1~2樓"/>
+        <textarea @focus="pointing= 2"  @input="descInput(items[1],items[1].content);" v-model="items[1].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[1].remnant}} / {{items[1].limit}}</p>
+      </div>
 
       <div class="planTitle">
         <div class="planTitle__text">受災情況</div>
-        <div
-          class="planTitle__redIcon"
-          data-red="詳細描寫什麼時間點發生什麼事，如淹水深度、淹水時間、交通中斷情況、停電、撤離遭遇問題等，讓大家具體了解發生災害時，會面臨的狀況。"
-        >
+        <div class="planTitle__redIcon" data-red="詳細描寫什麼時間點發生什麼事，如淹水深度、淹水時間、交通中斷情況、停電、撤離遭遇問題等，讓大家具體了解發生災害時，會面臨的狀況。">
           <i class="fas fa-question"></i>
         </div>
         <div
@@ -71,7 +83,11 @@
           <i class="fas fa-pencil-alt"></i>
         </div>
       </div>
-      <textarea class name id maxlength="500"></textarea>
+<div class="textContainer">
+        <img v-if="pointing === 3" src="~@/assets/img/planList/point.png"  place-holder="新北市健康區安心里長壽路1號1~2樓"/>
+        <textarea @focus="pointing= 3"  @input="descInput(items[2],items[2].content);" v-model="items[2].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[2].remnant}} /  {{items[2].limit}}</p>
+      </div>
 
       <div class="planTitle">
         <div class="planTitle__text">可能致災原因</div>
@@ -86,28 +102,44 @@
           <i class="fas fa-pencil-alt"></i>
         </div>
       </div>
-      <textarea class name id maxlength="500"></textarea>
+      <div>可能致災原因</div>
+<div class="textContainer">
+        <img v-if="pointing === 4" src="~@/assets/img/planList/point.png"  place-holder="新北市健康區安心里長壽路1號1~2樓"/>
+        <textarea @focus="pointing= 4"  @input="descInput(items[3],items[3].content);" v-model="items[3].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[3].remnant}} /  {{items[3].limit}}</p>
+      </div>
 
-      <div class="planJob">
-        <div class="planTitle__text inline txt-center">致災原因是否解決</div>
-        <div class="planTitle__redIcon inline txt-center" data-red="若已解決，可填寫解決方法。">
-          <i class="fas fa-question"></i>
-        </div>
-        <div class="planTitle__greenIcon inline txt-center" data-green="修正員工聯絡機制，並透過平時演練提高員工召回速度。">
-          <i class="fas fa-pencil-alt"></i>
-        </div>
+      <div>致災原因是否解決</div>
+      <div class="teamClass" style="display:flex;">
+          <div style="vertical-align: top;
+    display: inline-block;" class="teamClass__block">
+            <span>未解決</span>
+            <input name="no" type="checkbox">
+            <label for="no"></label>
+          </div>
+          <div style="vertical-align: top;
+    display: inline-block;" class="teamClass__block">
+            <span>已解決</span>
+            <input name="ys" type="checkbox">
+            <label for="ys"></label>
+          </div>
+          <div class="textContainer" style="display: inline-block;
+    margin-left: 30px;
+    width: 60%;">
+        <img v-if="pointing === 5" src="~@/assets/img/planList/point.png"  placeholder="填寫解決方法"/>
+        <textarea @focus="pointing= 5"  @input="descInput(items[3],items[3].content);" v-model="items[3].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[3].remnant}} /  {{items[3].limit}}</p>
       </div>
-      <div class="teamClass" style="display: flex;">
-        <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>未解決</label>
-        </div>
-        <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>已解決</label>
-        </div>
       </div>
-      <textarea class name id maxlength="500"></textarea>
+       <div style="text-align:right;display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;">
+       <div class="addBtn"  @click="modal = true">
+        <i class="fa fa-plus"></i>
+        可能致災原因
+      </div>
+      </div>
+
 
       <template #footer>確定送出</template>
     </TheModal>
@@ -138,7 +170,7 @@
       </div>
     </div>
 
-    <div class="planJob">
+    <div class="planJob" style="margin-bottom:20px">
       <div class="planTitle__text inline">1. 水災：淹水潛勢</div>
       <div
         class="planTitle__redIcon"
@@ -154,11 +186,12 @@
       </div>
     </div>
 
-    <label for="upload">上傳圖片</label>
+    <label for="upload" style="margin-right:20px">上傳圖片</label>
 
     <input type="file" id="upload" name="upload" accept="image/png, image/jpeg" />
     <div>目前已上傳的圖片：</div>
     <img src="~@/assets/img/planList/demo.jpg" alt />
+    
 
     <div class="planJob">
       <div class="planTitle__text inline" style="width: 250px;">2. 坡地災害：土石流、山崩</div>
@@ -176,14 +209,15 @@
       </div>
     </div>
 
-    <label for="upload">上傳圖片</label>
+    <label for="upload" style="margin-right:20px">上傳圖片</label>
 
     <input type="file" id="upload" name="upload" accept="image/png, image/jpeg" />
     <div>目前已上傳的圖片：</div>
     <img src="~@/assets/img/planList/demo.jpg" alt />
 
     <div class="planJob">
-      <div class="planTitle__text inline">3. 其他災害</div>
+      <div class="planTitle__text inline" style="width: fit-content;
+    padding: 0 20px;">3. 其他災害</div>
       <div
         class="planTitle__redIcon"
         style="
@@ -193,7 +227,7 @@
     font-size: 16px;"
         data-red="視機構需求或環境狀況擷取其他圖資，如海嘯溢淹、斷層與土壤液化等，非必填"
       ><i class="fas fa-question"></i></div>
-      <div class="addBtn" @click="modal =! modal">
+      <div class="addBtn" @click="modal = !modal">
         <i class="fa fa-plus"></i>
         新增其他災害
       </div>
@@ -210,10 +244,22 @@
       </thead>
       <tbody>
         <tr>
-            <th style="width: 30%;">地震</th>
-          <th style="width: 30%;"><img  src="~@/assets/img/planList/demo.jpg" alt=""></th>
-          <th>修改</th>
-          <th>刪除</th>
+            <th style="width: 30%;vertical-align: top;">地震</th>
+          <th style="width: 30%;text-align:center;"><img  src="~@/assets/img/planList/demo.jpg" alt=""></th>
+          <th  style="vertical-align: middle;" class="underline">修改</th>
+          <th style="vertical-align: middle;"  class="underline">刪除</th>
+        </tr>
+        <tr>
+            <th style="width: 30%;vertical-align: top;">地震</th>
+          <th style="width: 30%;text-align:center;"><img  src="~@/assets/img/planList/demo.jpg" alt=""></th>
+          <th  style="vertical-align: middle;" class="underline">修改</th>
+          <th style="vertical-align: middle;"  class="underline">刪除</th>
+        </tr>
+        <tr>
+            <th style="width: 30%;vertical-align: top;">地震</th>
+          <th style="width: 30%;text-align:center;"><img  src="~@/assets/img/planList/demo.jpg" alt=""></th>
+          <th  style="vertical-align: middle;" class="underline">修改</th>
+          <th style="vertical-align: middle;"  class="underline">刪除</th>
         </tr>
       </tbody>
     </table>
@@ -232,7 +278,6 @@ export default {
   },
   methods: {
     closeModal() {
-      console.log("close");
       this.modal = false;
     }
   }
@@ -259,7 +304,7 @@ label {
 }
 
 .planJob {
-  margin: 15px 0;
+  margin: 10px 0;
   .planTitle__text {
     width: 200px;
   }
@@ -269,4 +314,54 @@ label {
       display: inline-block;
     float: right;
 }
+
+
+
+.teamClass__block input +label{
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    left: 15px;
+        border-radius: 100px;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border: 3px solid lightgray;
+}
+
+.teamClass__block input +label::before{
+    display: block;
+    content: "";
+    text-align: center;
+    font-size: 16px;
+    color: white;
+
+}
+
+.teamClass__block input {
+    visibility: hidden;
+}
+
+.teamClass__block {
+  width: fit-content;
+    margin-right: 40px;
+}
+
+.teamClass__block span{
+      display: inline-block;
+    margin-left: 44px;
+    color: #777;
+}
+
+
+.teamClass__block input:checked +label::before{
+    display: block;
+    content: "";
+    text-align: center;
+    font-size: 16px;
+     background: lightgray;
+    border: 3px solid lightgray;
+}
+
 </style>

@@ -18,26 +18,30 @@
         </div>
       </div>
 
-      <div class="teamClass" style="display: flex;">
+        <div class="teamClass" style="display: flex;">
         <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>地震</label>
+           <span>地震</span>
+          <input name="A" type="checkbox" />
+          <label for="A"></label>
         </div>
         <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>坡地災害</label>
+          <span>坡地災害</span>
+          <input  name="B" type="checkbox" />
+          <label for="B"></label>
         </div>
         <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>水災</label>
+          <span>水災</span>
+          <input  name="C" type="checkbox" />
+          <label for="C"></label>
         </div>
         <div class="teamClass__block">
-          <input type="checkbox" />
-          <label for>其他</label>
+        <span>其他</span>
+          <input  name="D" type="checkbox" />
+          <label for="D"></label>
         </div>
       </div>
 
-      <div class="planTitle">
+      <div class="planTitle" style="margin-top: 12px;">
         <div class="planTitle__text">災害風險</div>
         <div class="planTitle__redIcon" data-red="請綜整前述天然災害風險檢查系統評估結果+災害經驗+災害潛勢地圖分析結果，說明在什麼情境下會發生災害，以及機構面臨的風險情況。">
           <i class="fas fa-question"></i>
@@ -51,7 +55,11 @@
           <i class="fas fa-pencil-alt"></i>
         </div>
       </div>
-      <textarea class name id maxlength="500"></textarea>
+      <div class="textContainer">
+        <img v-if="pointing === 1" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 1"  @input="descInput(items[0],items[0].content);" v-model="items[0].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[0].remnant}} / 500</p>
+      </div>
 
       <div class="planTitle">
         <div class="planTitle__text">減災策略</div>
@@ -68,26 +76,30 @@
           <i class="fas fa-pencil-alt"></i>
         </div>
       </div>
-      <textarea class name id maxlength="500"></textarea>
+ <div class="textContainer" style="margin-bottom: 30px;">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png"  place-holder="新北市健康區安心里長壽路1號1~2樓"/>
+        <textarea @focus="pointing= 2"  @input="descInput(items[1],items[1].content);" v-model="items[1].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[1].remnant}} / 500</p>
+      </div>
 
 <div class="planTopic">
-      <div class="themeColor">(一) 自然災害風險檢察系統初評結果</div>
+      <div class="themeColor topline">(一) 自然災害風險檢察系統初評結果</div>
     </div>
     <div class="threeColumn">
-      <input class="greyInput" type="text" />
-      <input class="greyInput" type="text" />
-      <input class="greyInput" type="text" />
+      <input class="greyInput" placeholder="坡地災害風險" type="text" />
+      <input class="greyInput" placeholder="高" type="text" />
+      <input class="greyInput" placeholder="XXXXX(不放建議)" type="text" />
     </div>
     <div class="threeColumn">
-      <input class="greyInput" type="text" />
-      <input class="greyInput" type="text" />
-      <input class="greyInput" type="text" />
+      <input class="greyInput"  placeholder="水災風險" type="text" />
+      <input class="greyInput"  placeholder="高" type="text" />
+      <input class="greyInput"  placeholder="XXXXX(不放建議)" type="text" />
     </div>
 
     <div class="planTopic">
-      <div class="themeColor">受災經驗</div>
+      <div class="themeColor">(二)受災經驗</div>
     </div>
-    <table class="blueTable">
+    <table class="blueTable smallTable">
       <thead>
         <tr>
           <th>災害類型</th>
@@ -118,17 +130,17 @@
       <div class="themeColor">災害潛勢地圖</div>
     </div>
 
-    <table class="blueTable">
+    <table class="blueTable smallTable">
       <thead>
         <tr>
-          <th>災害類型</th>
-          <th>上傳的圖</th>
+          <th style="width:50%;">災害類型</th>
+          <th style="width:50%;">上傳的圖</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th>地震地震地震地震</th>
-          <th></th>
+          <td>地震地震地震地震</td>
+          <td></td>
         </tr>
       </tbody>
     </table>
@@ -148,7 +160,7 @@
       </div>
     </div>
     <div class="planTopic">
-      <div class="themeColor">(四) 綜合研判結果</div>
+      <div class="themeColor" style="font-size: 1.5rem;">(四) 綜合研判結果</div>
       <div
         class="planTitle__redIcon"
         style="
@@ -168,19 +180,33 @@
       <thead>
         <tr>
           <th>災害類型</th>
-          <th style="width: 30%;">受災情況</th>
-          <th style="width: 30%;">可能致災原因</th>
+          <th style="width: 30%;">災害風險</th>
+          <th style="width: 30%;">減災策略</th>
           <th style="width: 10%;">修改</th>
           <th style="width: 10%;">刪除</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td></td>
-          <td style="width: 30%;"></td>
-          <td style="width: 30%;"></td>
-          <td style="width: 10%;">修改</td>
-          <td style="width: 10%;">刪除</td>
+          <td>水災風險</td>
+          <td>根據天然災害風險檢查系統初評結果，機構過去10年內曾經發生淹水事件，並有聯外道路中斷問題，致災原因為地勢低窪，目前仍未解決，水災風險高。水災潛勢地圖亦顯示，若雨量24小時累積500毫米，機構可能淹水深度達1~2公尺。</td>
+          <td>因為致災原因尚未解決，自行裝設防水閘門減少損害，並規劃垂直避難的時機。</td>
+          <td  class="underline" style="width: 10%;">修改</td>
+          <td  class="underline" style="width: 10%;">刪除</td>
+        </tr>
+        <tr>
+          <td>水災風險</td>
+          <td>根據天然災害風險檢查系統初評結果，機構過去10年內曾經發生淹水事件，並有聯外道路中斷問題，致災原因為地勢低窪，目前仍未解決，水災風險高。水災潛勢地圖亦顯示，若雨量24小時累積500毫米，機構可能淹水深度達1~2公尺。</td>
+          <td>因為致災原因尚未解決，自行裝設防水閘門減少損害，並規劃垂直避難的時機。</td>
+          <td  class="underline" style="width: 10%;">修改</td>
+          <td  class="underline" style="width: 10%;">刪除</td>
+        </tr>
+        <tr>
+          <td>水災風險</td>
+          <td>根據天然災害風險檢查系統初評結果，機構過去10年內曾經發生淹水事件，並有聯外道路中斷問題，致災原因為地勢低窪，目前仍未解決，水災風險高。</td>
+          <td>因為致災原因尚未解決，自行裝設防水閘門減少損害，並規劃垂直避難的時機。</td>
+          <td  class="underline" style="width: 10%;">修改</td>
+          <td  class="underline" style="width: 10%;">刪除</td>
         </tr>
       </tbody>
     </table>
@@ -194,13 +220,21 @@ export default {
   },
   data() {
     return {
-      modal:false
+      modal:false,
+       items: [
+        { content: "", remnant:500 },
+        { content: "", remnant:500 },
+      ],
+      pointing:0
     };
   },
   methods:{
     closeModal(){
       this.modal = false;
-    }
+    }, descInput(item,text){
+      var txtVal = text.length;
+      item.remnant = 500 - txtVal;
+  },
   }
 };
 </script>
@@ -208,4 +242,81 @@ export default {
   .planTopic .themeColor {
     margin: 23px 0;
   }
+
+  .addBtn {
+        position: absolute;
+    right: 0;
+  }
+
+table.smallTable {
+      width: 70%;
+}
+
+.teamClass__block input +label{
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    left: 15px;
+        border-radius: 100px;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border: 3px solid lightgray;
+}
+
+.teamClass__block input +label::before{
+    display: block;
+    content: "";
+    text-align: center;
+    font-size: 16px;
+    color: white;
+
+}
+
+.teamClass__block input {
+    visibility: hidden;
+}
+
+.teamClass__block {
+  width: fit-content;
+    margin-right: 40px;
+}
+
+.teamClass__block span{
+      display: inline-block;
+    margin-left: 44px;
+    color: #777;
+}
+
+
+.teamClass__block input:checked +label::before{
+    display: block;
+    content: "";
+    text-align: center;
+    font-size: 16px;
+     background: lightgray;
+    border: 3px solid lightgray;
+}
+
+
+.planTopic .themeColor {
+      font-size: 18px;
+      margin:-4px 0;
+}
+
+.topline {
+  position:relative;
+  margin-top: 15px;
+   &::before {
+    content: "";
+    width: 1440px;
+    height: 2px;
+    top: -10px;
+    background: #66cdb6;
+    position: absolute;
+    left: -100px;
+}
+}
+ 
 </style>

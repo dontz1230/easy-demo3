@@ -87,7 +87,11 @@
           <i class="fas fa-question"></i>
         </div>
       </div>
-      <textarea placeholder="協助住民穩住重心" maxlength="500"></textarea>
+         <div class="textContainer">
+        <img v-if="pointing === 1" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 1" placeholder="協助住民穩住重心" @input="descInput(items[0],items[0].content);" v-model="items[0].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[0].remnant}} / {{items[0].limit}}</p>
+      </div>
 
       <div class="planTitle">
         <div class="planTitle__text">工作內容</div>
@@ -96,7 +100,12 @@
           <i class="fas fa-question"></i>
         </div>
       </div>
-      <textarea placeholder="坐下：協助站立的住民就地坐下，避免跌倒。" maxlength="500"></textarea>
+     
+       <div class="textContainer">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png"  place-holder="新北市健康區安心里長壽路1號1~2樓"/>
+        <textarea @focus="pointing= 2" placeholder="坐下：協助站立的住民就地坐下，避免跌倒。"  @input="descInput(items[1],items[1].content);" v-model="items[1].content"  class name id maxlength="500"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[1].remnant}} / {{items[1].limit}}</p>
+      </div>
 
       <template #footer>確定送出</template>
       </TheModal>
@@ -167,8 +176,8 @@
           <td style="width: 23%;">統計傷患、安排送醫</td>
           <td style="width: 15%;">安全防護班ＯＯＯ，避難引導班ＯＯＯ</td>
           <td style="width: 15%;">安全防護班ＯＯＯ</td>
-          <td>修改</td>
-          <td>刪除</td>
+          <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th style="width: 15%;">1b. 動員機構人員</th>
@@ -176,8 +185,8 @@
           <td style="width: 23%;">制定人員的召回機制，包含機構的地震、颱洪應變啟動時間、集合地點、訊息通知方式</td>
           <td style="width: 15%;">指揮官ＯＯＯ</td>
           <td style="width: 15%;">指揮官ＯＯＯ，通報班ＯＯＯ</td>
-          <td>修改</td>
-          <td>刪除</td>
+        <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th style="width: 15%;">1b. 動員機構人員</th>
@@ -185,8 +194,8 @@
           <td style="width: 23%;">指揮應變小組運作</td>
           <td style="width: 15%;">通報班ＯＯＯ</td>
           <td style="width: 15%;">指揮官ＯＯＯ</td>
-          <td>修改</td>
-          <td>刪除</td>
+           <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th style="width: 15%;">2. 收集資訊</th>
@@ -194,8 +203,8 @@
           <td style="width: 23%;">準備兩個以上獲得災害資訊的管道</td>
           <td style="width: 15%;">救護班ＯＯＯ</td>
           <td style="width: 15%;">救護班ＯＯＯ</td>
-          <td>修改</td>
-          <td>刪除</td>
+         <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th style="width: 15%;">2. 收集資訊</th>
@@ -203,8 +212,8 @@
           <td style="width: 23%;">檢查建物、重要設施（例如，水、電、瓦斯等維生管線）的損壞情況</td>
           <td style="width: 15%;">搶救班ＯＯＯ，搶救班ＯＯＯ，搶救班ＯＯＯ</td>
           <td style="width: 15%;">搶救班ＯＯＯ</td>
-          <td>修改</td>
-          <td>刪除</td>
+          <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
         <tr>
           <th style="width: 15%;">2. 收集資訊</th>
@@ -212,8 +221,8 @@
           <td style="width: 23%;">了解各種警戒資訊的作用與分級標準</td>
           <td style="width: 15%;">搶救班ＯＯＯ</td>
           <td style="width: 15%;">救護班ＯＯＯ</td>
-          <td>修改</td>
-          <td>刪除</td>
+          <td class="underline">修改</td>
+          <td class="underline">刪除</td>
         </tr>
       </tbody>
     </table>
@@ -228,13 +237,22 @@ export default {
   data() {
     return {
       modal: false,
-      modalTwo: false
+      modalTwo: false,
+      items: [
+        { content: "", remnant:50,limit:50 },
+        { content: "", remnant:50,limit:500 },
+      ],
+      pointing:0
     };
   },
   methods: {
     closeModal() {
       this.modal = false;
-    }
+    },
+     descInput(item,text){
+      var txtVal = text.length;
+      item.remnant = item.limit - txtVal;
+  },
   }
 };
 </script>

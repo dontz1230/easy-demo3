@@ -27,26 +27,64 @@
       >以下內容為直接帶入「長照機構天然災害風險檢查」系統之評估結果，如為空白表示您未曾填報過，請至 https://easy2do.ncdr.nat.gov.tw/ssa/survey 進行填答</p>
     </div>
     <div class="threeColumn">
-      <input class="greyInput" type="text" />
-      <input class="greyInput" type="text" />
-      <input class="greyInput" type="text" />
+      <div class="textContainer">
+        <img v-if="pointing === 1" src="~@/assets/img/planList/point.png" />
+        <input class="greyInput" @focus="pointing= 1" placeholder="地震風險" type="text" />
+      </div>
+      
+      <div class="textContainer">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png" />
+        <input class="greyInput" @focus="pointing= 2" placeholder="低" type="text" />
+      </div>
+      <div class="textContainer">
+        <img v-if="pointing === 3" src="~@/assets/img/planList/point.png" />
+        <input class="greyInput" @focus="pointing= 3" placeholder="XXXX(不放建議)" type="text" />
+      </div>
     </div>
     <div class="threeColumn">
-      <input class="greyInput" type="text" />
-      <input class="greyInput" type="text" />
-      <input class="greyInput" type="text" />
+      <div class="textContainer">
+        <img v-if="pointing === 4" src="~@/assets/img/planList/point.png" />
+        <input class="greyInput" @focus="pointing= 4"  placeholder="坡地災害風險" type="text" />
+      </div>
+      <div class="textContainer">
+        <img v-if="pointing === 5" src="~@/assets/img/planList/point.png" />
+        <input class="greyInput" @focus="pointing= 5"  placeholder="高" type="text" />
+      </div>
+      <div class="textContainer">
+        <img v-if="pointing === 6" src="~@/assets/img/planList/point.png" />
+        <input class="greyInput" @focus="pointing= 6"  placeholder="XXXX(不放建議)" type="text" />
+      </div>
+    </div>
+    <div class="threeColumn">
+    <div class="textContainer">
+        <img v-if="pointing === 7" src="~@/assets/img/planList/point.png" />
+        <input class="greyInput" @focus="pointing= 4"  placeholder="水災風險" type="text" />
+      </div>
+      <div class="textContainer">
+        <img v-if="pointing === 8" src="~@/assets/img/planList/point.png" />
+        <input class="greyInput" @focus="pointing= 5"  placeholder="高" type="text" />
+      </div>
+      <div class="textContainer"
+        <img v-if="pointing === 9" src="~@/assets/img/planList/point.png" />
+        <input class="greyInput" @focus="pointing= 6"  placeholder="XXXX(不放建議)" type="text" />
+      </div>
     </div>
   </div>
 </template> 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      pointing:0
+    };
   }
 };
 </script>
 <style lang="scss" scoped>
   .planTopic .themeColor {
     margin: 23px 0;
+  }
+  input {
+    width:100%;
   }
 </style>

@@ -54,7 +54,7 @@
 @import "site/layout/_footer";
 @import "site/layout/_btn";
 @import "site/layout/_second-nav";
-@import "site/layout/_form";
+// @import "site/layout/_form";
 @import "site/layout/_search";
 @import "site/layout/_nav";
 @import "site/layout/_tag";
@@ -63,20 +63,20 @@
 
 /* site page
    ========================================================================== */
-@import "site/pages/_home";
-@import "site/pages/_county";
-@import "site/pages/_survey";
-@import "site/pages/_survey-page";
-@import "site/pages/_survey-result";
-@import "site/pages/_subject";
-@import "site/pages/_case-study";
-@import "site/pages/_resource";
-@import "site/pages/_account";
-@import "site/pages/_contact";
-@import "site/pages/_news";
-@import "site/pages/_ssa";
-@import "site/pages/_pdf";
-@import "site/pages/_guide";
+// @import "site/pages/_home";
+// @import "site/pages/_county";
+// @import "site/pages/_survey";
+// @import "site/pages/_survey-page";
+// @import "site/pages/_survey-result";
+// @import "site/pages/_subject";
+// @import "site/pages/_case-study";
+// @import "site/pages/_resource";
+// @import "site/pages/_account";
+// @import "site/pages/_contact";
+// @import "site/pages/_news";
+// @import "site/pages/_ssa";
+// @import "site/pages/_pdf";
+// @import "site/pages/_guide";
 
 @import "site/pages/plan-list";
 @import "site/pages/plan-page";
@@ -88,3 +88,21 @@
 @import "site/pages/plan-page-btn";
 
 /* ========================================================================== */
+
+#app::-webkit-scrollbar {
+  display:none;
+}
+
+#app {
+   -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+}
+
+body::-webkit-scrollbar {
+    display: none!important;
+}
+
+body {
+       font-family: Arial,"\6587\6CC9\9A5B\6B63\9ED1",PingFangSC-Regular,WenQuanYi Zen Hei,"\5137\9ED1 Pro",LiHei Pro,"\5FAE\8EDF\6B63\9ED1\9AD4",Microsoft JhengHei,sans-serif!important;
+
+}

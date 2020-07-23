@@ -1,18 +1,25 @@
 .nav {
-  display: flex;
+
   background: $planGreen;
-  height: 80px;
+  
+  
+  .navContainer {
+ max-width:1280px;
+ height: 120px;
+ align-items: center;
+    display: flex;
   justify-content: space-between;
-  padding: 0 5%;
-  align-items: center;
-  &__links {
+      margin: auto;
+    .nav__links {
     width: 400px;
     display: flex;
-    justify-content: space-around;
+        justify-content: space-between;
   }
   img {
       width: 150px;
   }
+  }
+  
 }
 a {
   color: #fff;

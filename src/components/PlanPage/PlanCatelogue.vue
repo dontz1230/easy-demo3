@@ -71,7 +71,7 @@ export default {
         {
           inde: "二.",
           page: 2,
-          title: "機構基本資料"
+          title: "二.機構基本資料"
         },
         {
           index: "三.",
@@ -90,12 +90,12 @@ export default {
         },
         {
           index: "六.",
-          page: 4,
+          page: 14,
           title: "教育訓練/演練"
         },
         {
           index: "七.",
-          page: 5,
+          page: 15,
           title: "附件"
         }
       ]
@@ -132,5 +132,25 @@ export default {
     background: #66CDB6;
     display: inline-block;
     vertical-align: middle;
+}
+
+.stepList {
+  &:before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    width: 2px;
+    background: #d6d6d6;
+    height: calc(100% + 35px)
+  }
+  &:last-of-type{
+     &:before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    width: 0;
+    height:0!important;
+  }
+  }
 }
 </style>

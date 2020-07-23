@@ -7,13 +7,25 @@
 }
 
 .plan-page {
-  position: relative;
-  display: grid;
-  grid-template-columns: 320px auto ;
-  grid-template-areas:
-    "panel panel"
-    "catelogue page"
-    "catelogue btn"
+      margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-flow: column;
+}
+
+.planContent {
+      overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    min-width: 1140px;
+    max-width:1280px;
+
+}
+
+.planTopic {
+      margin: 10px auto;
 }
 
 
@@ -58,6 +70,10 @@
   border:1px solid #D4D4D4;
 }
 
+.planHeader__option{
+      margin-right: 18px;
+}
+
 .planHeader__option span{
   color:#F45454;
 }
@@ -69,3 +85,28 @@
 .txt-center {
   text-align: center;
 }
+
+.textContainer {
+  position:relative;
+    line-height: 1;
+
+    textarea {
+      width:100%;
+    }
+}
+
+.textContainer img {
+  position: absolute;
+  left: -20px;
+  top: 15px;
+    z-index: 99;
+}
+
+.textContainer p {
+  height: 10px;
+}
+
+.planTitle__redIcon {
+  margin: 0 12px;
+}
+

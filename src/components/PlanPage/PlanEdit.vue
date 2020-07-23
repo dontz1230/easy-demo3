@@ -1,5 +1,5 @@
 <template>
-  <div class="plan-section">
+  <div class="plan-edit" style="width: 100%;">
     <div class="planHeader">
       <div class="planHeader__title">長照機構災管計畫 編輯封面</div>
       <div class="planHeader__option">
@@ -17,14 +17,23 @@
         <i class="fas fa-question"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+    <div class="textContainer">
+        <img v-if="pointing === 1" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 1" placeholder="平安是福長期照顧中心"  @input="descInput(items[0],items[0].content);" v-model="items[0].content"  class name id maxlength="60"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[0].remnant}} / {{items[0].limit}}</p>
+      </div>
+
     <div class="planTitle">
       <div class="planTitle__text">計劃名稱</div>
       <div class="planTitle__redIcon" data-red="顯示於封面主題第2列。">
         <i class="fas fa-question"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+    <div class="textContainer">
+        <img v-if="pointing === 2" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 2"  placeholder="天然災害管理計畫" @input="descInput(items[1],items[1].content);" v-model="items[1].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[1].remnant}} / {{items[1].limit}}</p>
+      </div>
 
     <div class="planTitle">
       <div class="planTitle__text">撰寫者</div>
@@ -32,7 +41,11 @@
         <i class="fas fa-question"></i>
       </div>
     </div>
-    <textarea class name id maxlength="500"></textarea>
+    <div class="textContainer">
+        <img v-if="pointing === 3" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 3" placeholder="行政管理師 郝峖權、護理長 顧德豪" @input="descInput(items[2],items[2].content);" v-model="items[2].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[2].remnant}} / {{items[2].limit}}</p>
+      </div>
 
     <div class="planTitle">
       <div class="planTitle__text">核定者</div>
@@ -40,7 +53,11 @@
         <i class="fas fa-question"></i>
       </div>
     </div>
-    <input type="text" name id />
+    <div class="textContainer">
+        <img v-if="pointing === 4" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 4" placeholder="院長 曾安馨" @input="descInput(items[3],items[3].content);" v-model="items[3].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[3].remnant}} / {{items[3].limit}}</p>
+      </div>
 
     <div class="planTitle">
       <div class="planTitle__text">更新頻率</div>
@@ -48,7 +65,11 @@
         <i class="fas fa-question"></i>
       </div>
     </div>
-    <input type="text" name id />
+    <div class="textContainer">
+        <img v-if="pointing === 5" src="~@/assets/img/planList/point.png" />
+        <textarea @focus="pointing= 5"  placeholder="兩年一次" @input="descInput(items[4],items[4].content);" v-model="items[4].content"  class name id maxlength="50"></textarea>
+        <p style="text-align:right;margin:0;font-size:14px;">{{items[4].remnant}} / {{items[4].limit}}</p>
+      </div>
 
     <div class="planTitle">
       <div class="planTitle__text">封面樣式</div>
@@ -60,10 +81,11 @@
       </div>
     </div>
     <div class="styleList">
-      <div class="styleList__left">
-        <div class="styleBlock">
-          <input type="radio" name="style" id />
-          <label for="style">樣式A</label>
+      <div class="styleBlock">
+          <div class="styleBlock__text">
+            <input type="radio" name="style" id />
+            <label for="style">樣式A</label>
+          </div>
           <img src="~@/assets/img/planList/typea.jpg" alt />
           <div class="styleBlock__btn">
             <i class="fas fa-eye"></i>
@@ -71,31 +93,36 @@
           </div>
         </div>
         <div class="styleBlock">
-          <input type="radio" name="style" id />
-          <label for="style">樣式B</label>
+          <div class="styleBlock__text">
+            <input type="radio" name="style" id />
+            <label for="style">樣式B</label>
+          </div>
           <img src="~@/assets/img/planList/typeb.jpg" alt />
           <div class="styleBlock__btn">
             <i class="fas fa-eye"></i>
             預覽
           </div>
         </div>
-        <div class="styleBlock">
-          <input type="radio" name="style" id />
-          <label for="style">樣式C</label>
+      <div class="styleList__right">
+       <div class="styleBlock" style="float: left;">
+          <div class="styleBlock__text">
+            <input type="radio" name="style" id />
+            <label for="style">我要自行上傳</label>
+          </div>
           <img src="~@/assets/img/planList/typec.jpg" alt />
           <div class="styleBlock__btn">
             <i class="fas fa-eye"></i>
             預覽
           </div>
         </div>
-      </div>
-      <div class="styleList__right">
-        <label for="upload">上傳圖片</label>
+        <div class="uploadBlock">
+          <span for="upload">上傳圖片</span>
 
-        <input type="file" id="upload" name="upload" accept="image/png, image/jpeg" />
-        <div>目前已上傳的圖片：</div>
-        <img src="~@/assets/img/planList/demo.jpg" alt />
-         <div class="deleteBtn">刪除</div>
+          <input type="file" id="upload" name="upload" accept="image/png, image/jpeg" />
+          <div>目前已上傳的圖片：</div>
+          <img src="~@/assets/img/planList/demo.jpg" alt />
+          <div class="deleteBtn">刪除</div>
+        </div>
       </div>
     </div>
   </div>
@@ -103,42 +130,78 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      pointing:0,
+       items: [
+        { content: "", remnant:60,limit:60 },
+        { content: "", remnant:50,limit:50 },
+        { content: "", remnant:50,limit:50 },
+        { content: "", remnant:50,limit:50 },
+        { content: "", remnant:50,limit:50 },
+      ],
+    };
+  },
+  methods :{
+    descInput(item,text){
+      var txtVal = text.length;
+      item.remnant = item.limit - txtVal;
+  },
   }
 };
 </script>
 <style lang="scss" scoped>
 .planTitle {
-  width: 180px;
+
 }
 
 .styleList {
   width: 100%;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr 1fr 2fr;
+      grid-gap: 20px;
   &__left {
     display: flex;
     justify-content: space-between;
     border-right: 3px solid #d4d4d4;
     padding-right: 8px;
     margin-right: 8px;
-    .styleBlock {
+   
+  }
+}
+
+ .styleBlock {
       display: flex;
       align-items: center;
-          padding: 12px 20px;
     flex-direction: column;
     background: #fff;
+    padding: 18px 36px;
+    &__right {
+          background: #fff;
+    }
+    &__text {
+      display:flex;
+      align-items: center;
+          justify-content: flex-start;
+          width: 182px;
+        margin-bottom: 2px;
+        color:#777;
+    }
     img {
       margin: 6px auto;
     }
       &__btn {
         border: 1px solid #d4d4d4;
         border-radius: 4px;
-        padding: 2px 10px;
+        width: 86px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
+    padding: 0;
+    text-align: center;
+    margin-top: 12px;
+    color:#777;
       }
     }
-  }
-}
 
 input[type="radio"] {
   display: inline-block;
@@ -149,6 +212,11 @@ input[type="radio"] {
   border: 3px solid #d4d4d4;
   border-radius: 50em;
   -webkit-appearance: auto;
+  margin-right: 8px;  
+}
+
+.styleBlock__text input[type="radio"] {
+  top: 0!important;
 }
 
 .deleteBtn {
@@ -160,4 +228,30 @@ input[type="radio"] {
   color:#fff;
   border-radius: 4px;
 }
+
+.uploadBlock {
+  width: 50%;
+    display: inline-block;
+    color: #777;
+    align-self: stretch;
+    position:relative;
+    padding: 30px 0 30px 30px;
+    height: 100%;
+    &::before {
+      content:'';
+      height: 348px;
+    width: 6px;
+    background: #eaeaea;
+    position: absolute;
+    top:50%;
+    left:0;
+    transform: translateY(-50%);
+    }
+}
+
+.styleList__right {
+  background:#fff;
+}
+
+
 </style>

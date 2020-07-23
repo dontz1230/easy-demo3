@@ -73,7 +73,8 @@
     font-size: 16px;"
         data-red="填寫機構內所有應變人員姓名、聯絡電話。機構內所有人員均應納入應變編制內。"
       ><i class="fas fa-question"></i></div>
-      <div class="addBtn"   @click="modal = !modal">
+      <div class="addBtn" style="position: absolute;
+    right: 0;"  @click="modal = !modal">
         <i class="fa fa-plus"></i>
         新增應變人員
       </div>
@@ -90,10 +91,28 @@
       </thead>
       <tbody>
         <tr>
-          <td></td>
-          <td style="width: 60%;"></td>
-          <td style="width: 10%;">修改</td>
-          <td style="width: 10%;">刪除</td>
+          <td>ＯＯＯ</td>
+          <td style="width: 60%;">09XX-XXX-XXX</td>
+          <td class="underline" style="width: 10%;">修改</td>
+          <td class="underline" style="width: 10%;">刪除</td>
+        </tr>
+        <tr>
+          <td>ＯＯＯ</td>
+          <td style="width: 60%;">09XX-XXX-XXX</td>
+          <td class="underline" style="width: 10%;">修改</td>
+          <td class="underline" style="width: 10%;">刪除</td>
+        </tr>
+        <tr>
+          <td>ＯＯＯ</td>
+          <td style="width: 60%;">09XX-XXX-XXX</td>
+          <td class="underline" style="width: 10%;">修改</td>
+          <td class="underline" style="width: 10%;">刪除</td>
+        </tr>
+        <tr>
+          <td>ＯＯＯ</td>
+          <td style="width: 60%;">09XX-XXX-XXX</td>
+          <td class="underline" style="width: 10%;">修改</td>
+          <td class="underline" style="width: 10%;">刪除</td>
         </tr>
       </tbody>
     </table>
@@ -120,5 +139,13 @@ export default {
 <style lang="scss" scoped>
 .planTopic {
   margin: 30px auto;
+}
+
+input{
+  border: 1px solid;
+}
+
+.twoColumn {
+  grid-template-columns: 1fr 1fr;
 }
 </style>

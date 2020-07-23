@@ -10,19 +10,35 @@
       <div class="content">
           <slot>默认值</slot>
       </div>
-      <footer class="modalFooter">
+      <footer v-if="show && !test" class="modalFooter">
         <slot name="footer"></slot>
       </footer>
     </div>
 </template>
 <script>
 export default {
+  data(){
+    return {
+      show: true,
+    }
+  },
+  props:{
+    test:{
+      type:Boolean,
+      default: false
+    }
+  },
   methods: {
     closeModal() {
       console.log("clicked");
       this.$emit("closeModal");
     }
-  }
+  },
+  mounted() {
+    if(this.$route.path === '/planlist'){
+      this.show = false
+    } 
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -62,5 +78,9 @@ export default {
     margin-bottom: 12px;
     border-radius: 4px;
   }
+}
+
+.modal::-webkit-scrollbar {
+  display:none;
 }
 </style>

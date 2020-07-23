@@ -1,11 +1,12 @@
 .plan-list {
-  padding-bottom: 174px;
+      padding: 0 5% 174px 5%;
   background: #f8f8f8;
   &__title {
-    padding: 36px 22px;
+    padding: 36px 0;
     h1 {
       color: $planGreen;
-      font-size: 2em;
+      font-size:42px;
+      font-weight:bold;
     }
   }
   &__content {
@@ -27,7 +28,7 @@
   display: flex;
   justify-content: center;
   &:first-of-type {
-    background: $planGreen;
+    background: #3bb298;
   }
   &__content {
     display: flex;
@@ -35,11 +36,12 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    i {
-      font-size: 5rem;
+    svg {
+      font-size: 252px;
     }
     span {
-      font-size: 1.25rem;
+      font-size: 30px;
+      margin-top:20px;
     }
   }
 }
@@ -54,19 +56,27 @@
   &__header {
     display: flex;
     width: 100%;
-    color: $planGreen;
+    color: #3bb298;
     padding-left: 10px;
+    align-items: flex-start;
+        padding-top: 8px;
+    span {
+      font-size:28px;
+          height: 28px;
+    line-height: 28px;
+    }
     &__close {
       position: absolute;
       right: 7px;
-      background: $planGreen;
+      background: #3bb298;
       color: #fff;
       width: 30px;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 30px;
-      border-radius: 8px;
+      border-radius: 4px;
+      font-size: 16px!important;
     }
   }
   &__content {
@@ -83,14 +93,19 @@
       display: flex;
       .plan-options__btn {
         border: 1px solid #d4d4d4;
-        display: flex;
-        justify-content: center;
         align-items: center;
-        color: #333;
-        border-radius: 8px;
-        padding: 6px 12px;
-        i {
-          margin-right: 10px;
+        color: #424242;
+        border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        padding: 0;
+    height: 32px;
+    width: 86px;
+    line-height: 32px;
+    text-align: center;
+        svg {
+          margin-right: 8px;
         }
       }
     }
@@ -102,12 +117,13 @@
     }
     span {
       color: #656c6a;
-      font-size: 0.875em;
+          font-size: 14px;
+    letter-spacing: 1px;
     }
   }
   &__footer {
     width: 100%;
-    background: $planGreen;
+    background: #3bb298;
     display: flex;
     justify-content: center;
     align-items: center;

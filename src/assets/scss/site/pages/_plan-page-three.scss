@@ -2,18 +2,35 @@
 .plan-section {
   grid-area: page;
   margin-top: 76px;
-  padding-right:46px;
+  padding-right:0;
+  width: 75%;
+  .planHeader {
+    &__title {
+      margin-right:94px;
+    }
+  }
+}
+
+.plan-edit{
+  grid-area: page;
+  margin-top: 76px;
+  padding-right:0;
+  width: 75%;
 }
 
 .planHeader {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding-bottom: 4px;
   border-bottom: 2px solid #66cdb6;
+      margin-bottom: 25px;
   &__title {
-    font-size: 1.8rem;
-    margin-right: 90px;
+        height: 36px;
+    line-height: 36px;
+    font-size: 30px;
+        margin-right: 26px;
     color: #66cdb6;
+        font-weight: bold;
   }
   &__option {
     display: flex;
@@ -37,16 +54,19 @@
 .planTitle {
   display: flex;
   align-items: center;
-  width: 220px;
+      width: fit-content;
   justify-content: space-between;
-  margin: 15px 0;
+      margin-bottom: 12px;
   &__text {
     background: #66cdb6;
     color: #fff;
     width: 140px;
     text-align: center;
-    padding: 6px 0;
+    font-weight: bold;
     border-radius: 50em;
+        height: 39px;
+    padding: 0;
+    line-height: 39px;
   }
   &__redIcon {
     background: #f45454;
@@ -77,6 +97,9 @@
 
 .planTopic .themeColor {
   font-size: 1.5rem;
+  display: flex;
+    align-items: center;
+    font-weight:bold;
 }
 
 .plan-section-three-two .planTopic, .plan-section-three-two .planTitle {
@@ -84,19 +107,19 @@
     align-items: center;
     justify-content: flex-start;
     margin-top: 23px;
+    margin-bottom:23px;
     img {
       margin-left: 5px;
     }
 }
 
 .fromToYear {
-  display: flex;
-    justify-content: space-between;
+  color:#777;
     width: auto;
     margin-bottom: 10px;
     .normalInput {
-      height: 36px;
-    width: 133px;
+          width: 201px;
+    height: 54px;
     }
     .addBtn {
       margin-left: 160px;
@@ -117,20 +140,29 @@ table.blueTable {
   text-align: left;
   background: #f2f2f2;
   border-collapse: collapse;
+  color:#777;
 }
 table.blueTable td, table.blueTable th {
-  border: 1px solid #FFFFFF;
+  border: 3px solid #FFFFFF;
   padding: 3px 3px;
+}
+
+table.blueTable tbody tr:nth-of-type(even){
+      background: #fff;
 }
 
 table.blueTable thead {
   background: #66CDB6;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 3px solid #FFFFFF;
+  text-align:center;
+  
 }
 table.blueTable thead th {
   font-weight: bold;
   color: #FFFFFF;
-  border-left: 1px solid #FFFFFF;
+  border-left: 3px solid #FFFFFF;
+      text-align: center;
+    vertical-align: middle;
 }
 table.blueTable thead th:first-child {
   border-left: none;
@@ -154,4 +186,9 @@ table.blueTable tfoot td {
 
 .inline {
   display: inline-block;
+}
+
+.underline{
+  text-decoration: underline;
+  text-align:center;
 }

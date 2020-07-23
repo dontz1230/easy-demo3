@@ -7,7 +7,7 @@ module.exports = {
     config.module.rules.delete('eslint')
   },
    publicPath: process.env.NODE_ENV === 'production'
-    ? '/easy-demo/'
+    ? '/easy-demo3/'
     : '/'
   // assetsDir: '../site_easy2do/',
   // api路徑
